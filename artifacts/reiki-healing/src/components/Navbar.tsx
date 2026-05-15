@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoSrc from "@assets/image_1778827311423.png";
 
 const links = [
   { label: "Home", id: "home" },
@@ -39,9 +40,12 @@ export function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "border-b border-primary/10 py-3" : "py-5"}`}
       >
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <div className="font-serif text-xl text-primary font-medium tracking-wide">
-            Divine Healing
-          </div>
+          <img
+            src={logoSrc}
+            alt="Divine Healing — Spiritual Wellness"
+            className="h-14 w-auto object-contain"
+            data-testid="nav-logo"
+          />
 
           <div className="hidden md:flex gap-8 text-xs font-medium tracking-[0.15em] uppercase text-foreground/70">
             {links.map((l) => (
