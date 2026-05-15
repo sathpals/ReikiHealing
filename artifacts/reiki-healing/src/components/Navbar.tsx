@@ -19,9 +19,9 @@ export function Navbar() {
   const backgroundColor = useTransform(
     scrollY,
     [0, 60],
-    ["rgba(9, 9, 14, 0)", "rgba(9, 9, 14, 0.85)"]
+    ["rgba(253, 248, 240, 0)", "rgba(253, 248, 240, 0.92)"]
   );
-  const blur = useTransform(scrollY, [0, 60], ["blur(0px)", "blur(14px)"]);
+  const blur = useTransform(scrollY, [0, 60], ["blur(0px)", "blur(16px)"]);
 
   useEffect(() => {
     return scrollY.on("change", (v) => setIsScrolled(v > 20));
