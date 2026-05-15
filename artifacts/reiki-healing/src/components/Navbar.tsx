@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoSrc from "@assets/image_1778827311423.png";
+import logoSrc from "@assets/logo-transparent.png";
 
 const links = [
   { label: "Home", id: "home" },
