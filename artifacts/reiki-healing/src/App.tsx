@@ -5,8 +5,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { FeaturedServices } from "@/components/FeaturedServices";
 import { About } from "@/components/About";
+import { Stats } from "@/components/Stats";
 import { Sessions } from "@/components/Sessions";
+import { Testimonials } from "@/components/Testimonials";
+import { Gallery } from "@/components/Gallery";
+import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -18,8 +23,13 @@ function Home() {
       <Navbar />
       <main>
         <Hero />
+        <FeaturedServices />
         <About />
+        <Stats />
         <Sessions />
+        <Testimonials />
+        <Gallery />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

@@ -1,52 +1,90 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const links = [
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Services", id: "services" },
+  { label: "Gallery", id: "gallery" },
+  { label: "FAQ", id: "faq" },
+  { label: "Contact", id: "connect" },
+];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
-  
+
   const backgroundColor = useTransform(
     scrollY,
-    [0, 50],
-    ["rgba(15, 15, 18, 0)", "rgba(15, 15, 18, 0.8)"]
+    [0, 60],
+    ["rgba(9, 9, 14, 0)", "rgba(9, 9, 14, 0.85)"]
   );
-
-  const blur = useTransform(
-    scrollY,
-    [0, 50],
-    ["blur(0px)", "blur(12px)"]
-  );
+  const blur = useTransform(scrollY, [0, 60], ["blur(0px)", "blur(14px)"]);
 
   useEffect(() => {
-    return scrollY.onChange((latest) => {
-      setIsScrolled(latest > 20);
-    });
+    return scrollY.on("change", (v) => setIsScrolled(v > 20));
   }, [scrollY]);
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileOpen(false);
   };
 
   return (
-    <motion.nav 
-      style={{ backgroundColor, backdropFilter: blur }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'border-b border-primary/10 py-3' : 'py-6'}`}
-    >
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <div className="font-serif text-2xl text-primary font-medium tracking-wide">
-          Luna Reiki
+    <>
+      <motion.nav
+        style={{ backgroundColor, backdropFilter: blur }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "border-b border-primary/10 py-3" : "py-5"}`}
+      >
+        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+          <div className="font-serif text-xl text-primary font-medium tracking-wide">
+            Divine Healing
+          </div>
+
+          <div className="hidden md:flex gap-8 text-xs font-medium tracking-[0.15em] uppercase text-foreground/70">
+            {links.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => scrollTo(l.id)}
+                className="hover:text-primary transition-colors duration-200"
+                data-testid={`nav-${l.id}`}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            className="md:hidden text-foreground/70 hover:text-primary transition-colors"
+            onClick={() => setMobileOpen((v) => !v)}
+            data-testid="nav-mobile-toggle"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-        
-        <div className="hidden md:flex gap-8 text-sm font-medium tracking-wider uppercase text-foreground/80">
-          <button onClick={() => scrollTo('home')} className="hover:text-primary transition-colors" data-testid="nav-home">Home</button>
-          <button onClick={() => scrollTo('about')} className="hover:text-primary transition-colors" data-testid="nav-about">About</button>
-          <button onClick={() => scrollTo('sessions')} className="hover:text-primary transition-colors" data-testid="nav-sessions">Sessions</button>
-          <button onClick={() => scrollTo('connect')} className="hover:text-primary transition-colors" data-testid="nav-connect">Connect</button>
-        </div>
-      </div>
-    </motion.nav>
+      </motion.nav>
+
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="fixed top-[56px] inset-x-0 z-40 bg-background/95 backdrop-blur-xl border-b border-primary/10 py-6 flex flex-col items-center gap-6"
+        >
+          {links.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => scrollTo(l.id)}
+              className="text-sm tracking-widest uppercase text-foreground/70 hover:text-primary transition-colors"
+              data-testid={`nav-mobile-${l.id}`}
+            >
+              {l.label}
+            </button>
+          ))}
+        </motion.div>
+      )}
+    </>
   );
 }
