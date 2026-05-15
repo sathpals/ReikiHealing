@@ -4,11 +4,12 @@ import { Menu, X } from "lucide-react";
 import logoSrc from "@assets/logo-transparent.png";
 
 const links = [
-  { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Services", id: "services" },
+  { label: "Home",    id: "home" },
+  { label: "About",   id: "about" },
+  { label: "Healer",  id: "healer" },
+  { label: "Services",id: "services" },
   { label: "Gallery", id: "gallery" },
-  { label: "FAQ", id: "faq" },
+  { label: "FAQ",     id: "faq" },
   { label: "Contact", id: "connect" },
 ];
 

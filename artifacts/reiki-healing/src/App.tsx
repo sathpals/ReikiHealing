@@ -13,6 +13,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
+import { HealerProfile } from "@/components/HealerProfile";
 import { Footer } from "@/components/Footer";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function Home() {
         <Hero />
         <FeaturedServices />
         <About />
+        <HealerProfile />
         <Stats />
         <Sessions />
         <Testimonials />
