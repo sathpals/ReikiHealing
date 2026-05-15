@@ -1,33 +1,35 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import handsEnergyImg from "@assets/image_1778827454908.png";
-import handsLightImg from "@assets/image_1778827461038.png";
-import chakraImg from "@assets/image_1778827392136.png";
-import goddesImg from "@assets/image_1778827437426.png";
-import mountainImg from "@assets/image_1778827432553.png";
-import forestImg from "@assets/image_1778827397458.png";
-import reiki1 from "@assets/image_search/reiki_1.jpg";
-import reiki2 from "@assets/image_search/reiki_2.jpg";
-import reiki3 from "@assets/image_search/reiki_3.jpg";
-import reiki4 from "@assets/image_search/reiki_4.jpg";
-import reiki5 from "@assets/image_search/reiki_5.jpg";
-import reiki6 from "@assets/image_search/reiki_6.jpg";
+
+import handsEnergyImg  from "@assets/image_1778827454908.png";
+import handsLightImg   from "@assets/image_1778827461038.png";
+import chakraImg       from "@assets/image_1778827392136.png";
+import goddesImg       from "@assets/image_1778827437426.png";
+import mountainImg     from "@assets/image_1778827432553.png";
+import forestImg       from "@assets/image_1778827397458.png";
+
+import chakraStones    from "@assets/pexels-cup-of-couple-6634245_1778830057694.jpg";
+import blueEnergy      from "@assets/-f0PQzH68UTDFFD6FehVW_y-U-OUP1V5y82SudiQH4meXJ0ifUHjiizq-FpOB_1778830182869.jpeg";
+import cosmicMed       from "@assets/02QyBGti-ZQBLuADdV7z1qsqphkS3WwOFhkzL9LCA3hym9crrf1dTPaAF7eWv_1778830194676.jpeg";
+import energyOrb       from "@assets/5tAGwr7iBrf7_UbScJGW7B49GtZhBcuH8jEQJUO3gpVDL3_F2JaWIHr5Bh_v1_1778830204682.jpeg";
+import mudraSwirl      from "@assets/DwU-fmR6lN6hMQTT9cgURu-9HDSdVgU7zAwLa3xWyF0OO2vDKvZ5mz_96p3qJ_1778830218142.jpeg";
+import digitalFace     from "@assets/dY4WgUsUt-6lqXjAck16HttqcUi-3-XhJa62yRr7om7_NjclCIsp38IylZNTl_1778830221686.jpeg";
 
 type Category = "all" | "sessions" | "tools" | "spaces";
 
 const items = [
-  { title: "Reiki Healing Hands",   subtitle: "Sacred energy transfer",  category: "sessions" as Category, img: handsEnergyImg },
-  { title: "Light Energy Session",  subtitle: "Healing light",           category: "sessions" as Category, img: handsLightImg },
-  { title: "Chakra Balancing",      subtitle: "Energy alignment",        category: "sessions" as Category, img: chakraImg },
-  { title: "Divine Feminine",       subtitle: "Sacred wisdom",           category: "spaces"   as Category, img: goddesImg },
-  { title: "Mountain Meditation",   subtitle: "Sacred stillness",        category: "spaces"   as Category, img: mountainImg },
-  { title: "Energy Awakening",      subtitle: "Spiritual healing",       category: "sessions" as Category, img: forestImg },
-  { title: "Mountain Sunrise",      subtitle: "Nature & renewal",        category: "spaces"   as Category, img: reiki1 },
-  { title: "Yoga & Wellness",       subtitle: "Mind-body harmony",       category: "sessions" as Category, img: reiki2 },
-  { title: "Healing Crystals",      subtitle: "Sacred tools",            category: "tools"    as Category, img: reiki3 },
-  { title: "Peaceful Meditation",   subtitle: "Inner stillness",         category: "sessions" as Category, img: reiki4 },
-  { title: "Calm & Balance",        subtitle: "Spiritual clarity",       category: "spaces"   as Category, img: reiki5 },
-  { title: "Lotus Bloom",           subtitle: "Purity & transformation", category: "tools"    as Category, img: reiki6 },
+  { title: "Reiki Healing Hands",    subtitle: "Sacred energy transfer",    category: "sessions" as Category, img: handsEnergyImg },
+  { title: "Energy Orb Session",     subtitle: "Channelled healing light",  category: "sessions" as Category, img: energyOrb },
+  { title: "Chakra Stones",          subtitle: "Sacred tools",              category: "tools"    as Category, img: chakraStones },
+  { title: "Divine Feminine",        subtitle: "Sacred wisdom",             category: "spaces"   as Category, img: goddesImg },
+  { title: "Blue Energy Field",      subtitle: "Energy activation",         category: "sessions" as Category, img: blueEnergy },
+  { title: "Mudra & Light",          subtitle: "Sacred hand gesture",       category: "sessions" as Category, img: mudraSwirl },
+  { title: "Chakra Balancing",       subtitle: "Energy alignment",          category: "sessions" as Category, img: chakraImg },
+  { title: "Cosmic Meditation",      subtitle: "Universal consciousness",   category: "spaces"   as Category, img: cosmicMed },
+  { title: "Light Energy Session",   subtitle: "Rainbow healing",           category: "sessions" as Category, img: handsLightImg },
+  { title: "Mountain Meditation",    subtitle: "Sacred stillness",          category: "spaces"   as Category, img: mountainImg },
+  { title: "Energy Awakening",       subtitle: "Spiritual healing",         category: "sessions" as Category, img: forestImg },
+  { title: "Mind Energy Field",      subtitle: "Higher consciousness",      category: "tools"    as Category, img: digitalFace },
 ];
 
 const filters: { label: string; value: Category | "all" }[] = [
@@ -38,7 +40,7 @@ const filters: { label: string; value: Category | "all" }[] = [
 ];
 
 export function Gallery() {
-  const [active, setActive]   = useState<Category | "all">("all");
+  const [active, setActive]     = useState<Category | "all">("all");
   const [lightbox, setLightbox] = useState<null | (typeof items)[0]>(null);
 
   const filtered = items.filter((i) => active === "all" || i.category === active);
