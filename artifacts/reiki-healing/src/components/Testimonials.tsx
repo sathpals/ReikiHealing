@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Quote } from "lucide-react";
+import bgImg from "@assets/image_1778827397458.png";
 
 const testimonials = [
   {
@@ -43,9 +44,14 @@ export function Testimonials() {
   const t = testimonials[current];
 
   return (
-    <section className="py-24 md:py-28 bg-card/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/8 via-transparent to-primary/5 pointer-events-none" />
-      <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
+    <section className="relative py-24 md:py-28 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-foreground/80 via-secondary/70 to-foreground/80" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,9 +59,9 @@ export function Testimonials() {
           transition={{ duration: 0.7 }}
           className="mb-14"
         >
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">Testimonials</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3">
-            What Clients <span className="text-primary">Say</span>
+          <span className="text-xs font-medium tracking-[0.3em] uppercase text-white/60">Testimonials</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-white mt-3">
+            What Clients <span className="text-yellow-200 italic">Say</span>
           </h2>
         </motion.div>
 
@@ -69,14 +75,14 @@ export function Testimonials() {
               transition={{ duration: 0.5 }}
               className="absolute inset-x-0"
             >
-              <div className="bg-card/50 border border-primary/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm shadow-[0_0_40px_rgba(218,165,32,0.04)]">
-                <Quote className="w-8 h-8 text-primary/30 mx-auto mb-6" />
-                <p className="text-foreground/80 font-light text-lg md:text-xl leading-relaxed italic mb-8">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+                <Quote className="w-8 h-8 text-yellow-200/50 mx-auto mb-6" />
+                <p className="text-white/90 font-light text-lg md:text-xl leading-relaxed italic mb-8">
                   "{t.text}"
                 </p>
                 <div>
-                  <p className="font-serif text-lg text-primary">{t.name}</p>
-                  <p className="text-xs tracking-widest uppercase text-foreground/40 mt-1">{t.role}</p>
+                  <p className="font-serif text-lg text-yellow-200">{t.name}</p>
+                  <p className="text-xs tracking-widest uppercase text-white/40 mt-1">{t.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -90,8 +96,8 @@ export function Testimonials() {
               onClick={() => setCurrent(idx)}
               className={`transition-all duration-300 rounded-full ${
                 idx === current
-                  ? "w-8 h-2 bg-primary"
-                  : "w-2 h-2 bg-primary/25 hover:bg-primary/50"
+                  ? "w-8 h-2 bg-yellow-200"
+                  : "w-2 h-2 bg-white/30 hover:bg-white/60"
               }`}
               data-testid={`testimonial-dot-${idx}`}
             />

@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Smile, BookOpen, Clock, Users } from "lucide-react";
+import statsBgImg from "@assets/image_1778827432553.png";
 
 const stats = [
   { icon: Smile, value: 232, label: "People Helped" },
@@ -37,9 +38,14 @@ export function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="py-20 bg-card/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 pointer-events-none" />
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+    <section ref={ref} className="relative py-24 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${statsBgImg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/75 via-secondary/60 to-accent/70" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,11 +53,11 @@ export function Stats() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <h3 className="font-serif text-3xl md:text-4xl text-foreground">
+          <h3 className="font-serif text-3xl md:text-4xl text-white">
             Healing Lives With{" "}
-            <span className="text-primary">Care & Compassion</span>
+            <span className="text-yellow-200">Care & Compassion</span>
           </h3>
-          <p className="text-foreground/55 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-white/70 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Supporting emotional, mental, and spiritual wellness through personalized healing sessions and compassionate guidance.
           </p>
         </motion.div>
@@ -69,14 +75,14 @@ export function Stats() {
                 className="flex flex-col items-center text-center"
                 data-testid={`stat-${idx}`}
               >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(218,165,32,0.15)]">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                  <Icon className="w-6 h-6 text-yellow-200" />
                 </div>
-                <div className="font-serif text-5xl text-primary font-medium mb-2">
+                <div className="font-serif text-5xl text-white font-medium mb-2">
                   <Counter target={s.value} inView={inView} />
                   {s.value === 10 && <span className="text-3xl">+</span>}
                 </div>
-                <p className="text-xs tracking-widest uppercase text-foreground/50 font-medium">
+                <p className="text-xs tracking-widest uppercase text-white/60 font-medium">
                   {s.label}
                 </p>
               </motion.div>

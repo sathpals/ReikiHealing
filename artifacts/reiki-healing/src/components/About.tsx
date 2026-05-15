@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import aboutImg from "@assets/image_1778827392136.png";
 
 const credentials = [
   "Certified Reiki Master Practitioner",
@@ -11,7 +12,7 @@ const credentials = [
 export function About() {
   return (
     <section id="about" className="py-24 md:py-32 relative bg-background overflow-hidden">
-      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-secondary/8 rounded-full blur-[160px] pointer-events-none" />
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,21 +39,18 @@ export function About() {
             transition={{ duration: 0.9 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-secondary/30 via-card to-accent/20 border border-primary/10">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="w-48 h-48 rounded-full bg-primary/10 blur-2xl absolute -inset-8 animate-pulse" />
-                  <div className="w-32 h-32 rounded-full border border-primary/20 flex items-center justify-center relative z-10">
-                    <div className="w-20 h-20 rounded-full border border-primary/30 flex items-center justify-center">
-                      <div className="w-10 h-10 rounded-full bg-primary/20" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute bottom-6 left-6 right-6 bg-background/60 backdrop-blur-sm rounded-xl p-4 border border-primary/10">
-                <p className="text-xs tracking-widest uppercase text-primary/70 font-medium">Practice</p>
-                <p className="font-serif text-lg text-foreground mt-1">Gentle. Grounded. Transformative.</p>
-              </div>
+            <div className="absolute -inset-4 bg-secondary/10 rounded-3xl blur-2xl pointer-events-none" />
+            <div className="absolute -inset-2 bg-accent/8 rounded-3xl blur-xl pointer-events-none animate-pulse" />
+            <img
+              src={aboutImg}
+              alt="Chakra energy healing meditation"
+              className="relative z-10 w-full rounded-3xl object-cover shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+              style={{ maxHeight: "480px", objectFit: "cover" }}
+              data-testid="about-image"
+            />
+            <div className="absolute bottom-5 left-5 right-5 z-20 bg-background/70 backdrop-blur-md rounded-2xl p-4 border border-primary/15 shadow-lg">
+              <p className="text-xs tracking-widest uppercase text-primary font-medium mb-1">Practice</p>
+              <p className="font-serif text-base text-foreground">Reiki · Energy · Healing · Transformation</p>
             </div>
           </motion.div>
 
@@ -66,7 +64,7 @@ export function About() {
             <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4 leading-tight">
               Excellent health to unlock the best quality of your life
             </h3>
-            <p className="text-foreground/60 font-light italic mb-5 text-base leading-relaxed border-l-2 border-primary/30 pl-4">
+            <p className="text-foreground/60 font-light italic mb-5 text-base leading-relaxed border-l-2 border-primary/40 pl-4">
               True wellbeing is more than the absence of illness — it is the quiet flow of energy through a balanced body, a calm mind, and an open heart.
             </p>
             <p className="text-foreground/70 font-light mb-8 text-base leading-relaxed">
