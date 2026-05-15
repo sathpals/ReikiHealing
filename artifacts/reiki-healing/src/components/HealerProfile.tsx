@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, BookOpen, Star, Heart, Sparkles, Users, Globe, Zap } from "lucide-react";
-import profileBg from "@assets/image_1778827437426.png";
+import profileBg from "@assets/upRkC9WdOUahu9jCtZG5vSXP68AfrXT0-sUG0CUgzSdXVMdptihJw0cSz9HXS_1778830247395.jpeg";
 
 const accomplishments = [
   { icon: Award,    label: "Usui Reiki Grand Master",             detail: "Level III Certified" },

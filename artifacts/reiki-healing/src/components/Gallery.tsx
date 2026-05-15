@@ -14,6 +14,7 @@ import cosmicMed       from "@assets/02QyBGti-ZQBLuADdV7z1qsqphkS3WwOFhkzL9LCA3h
 import energyOrb       from "@assets/5tAGwr7iBrf7_UbScJGW7B49GtZhBcuH8jEQJUO3gpVDL3_F2JaWIHr5Bh_v1_1778830204682.jpeg";
 import mudraSwirl      from "@assets/DwU-fmR6lN6hMQTT9cgURu-9HDSdVgU7zAwLa3xWyF0OO2vDKvZ5mz_96p3qJ_1778830218142.jpeg";
 import digitalFace     from "@assets/dY4WgUsUt-6lqXjAck16HttqcUi-3-XhJa62yRr7om7_NjclCIsp38IylZNTl_1778830221686.jpeg";
+import divineGoddess   from "@assets/upRkC9WdOUahu9jCtZG5vSXP68AfrXT0-sUG0CUgzSdXVMdptihJw0cSz9HXS_1778830247395.jpeg";
 
 type Category = "all" | "sessions" | "tools" | "spaces";
 
@@ -30,6 +31,7 @@ const items = [
   { title: "Mountain Meditation",    subtitle: "Sacred stillness",          category: "spaces"   as Category, img: mountainImg },
   { title: "Energy Awakening",       subtitle: "Spiritual healing",         category: "sessions" as Category, img: forestImg },
   { title: "Mind Energy Field",      subtitle: "Higher consciousness",      category: "tools"    as Category, img: digitalFace },
+  { title: "Divine Goddess",         subtitle: "Sacred feminine energy",    category: "spaces"   as Category, img: divineGoddess },
 ];
 
 const filters: { label: string; value: Category | "all" }[] = [

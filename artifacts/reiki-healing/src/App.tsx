@@ -14,6 +14,7 @@ import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { HealerProfile } from "@/components/HealerProfile";
+import { ChakraDivider } from "@/components/ChakraDivider";
 import { Footer } from "@/components/Footer";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function Home() {
       <main>
         <Hero />
         <FeaturedServices />
+        <ChakraDivider />
         <About />
         <HealerProfile />
         <Stats />
