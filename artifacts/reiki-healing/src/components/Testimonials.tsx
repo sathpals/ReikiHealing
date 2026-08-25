@@ -61,7 +61,7 @@ export function Testimonials() {
         >
           <span className="text-xs font-medium tracking-[0.3em] uppercase text-white/60">Testimonials</span>
           <h2 className="font-serif text-4xl md:text-5xl text-white mt-3">
-            What Clients <span className="text-yellow-200 italic">Say</span>
+            What Clients <span className="text-aura-turquoise italic">Say</span>
           </h2>
         </motion.div>
 

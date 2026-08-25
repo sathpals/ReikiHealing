@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import aboutImg from "@assets/image_1778827392136.png";
+import aboutImg from "@assets/archana-flower-blessing-ceremony.png";
 
 const credentials = [
   "Certified Reiki Master Practitioner",
@@ -12,6 +12,8 @@ const credentials = [
 export function About() {
   return (
     <section id="about" className="py-24 md:py-32 relative bg-background overflow-hidden">
+      <div className="aura-field aura-field--soft" />
+      <div className="veil-lavender absolute inset-0 pointer-events-none" />
       <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-secondary/8 rounded-full blur-[160px] pointer-events-none" />
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
         <motion.div
@@ -23,9 +25,9 @@ export function About() {
         >
           <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">About</span>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3 mb-4">
-            Find Out More <span className="text-primary">About Us</span>
+            Find Out More <span className="text-aura-teal italic">About Us</span>
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-6" />
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-primary/60 via-50% to-transparent mx-auto mb-6" />
           <p className="text-foreground/60 font-light max-w-2xl mx-auto text-base leading-relaxed">
             Divine Healing is a sanctuary for those seeking gentle, grounded support on their wellness journey — a space where ancient healing traditions meet compassionate, modern care.
           </p>
@@ -37,18 +39,18 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
-            className="relative"
+            className="img-aura relative"
           >
             <div className="absolute -inset-4 bg-secondary/10 rounded-3xl blur-2xl pointer-events-none" />
             <div className="absolute -inset-2 bg-accent/8 rounded-3xl blur-xl pointer-events-none animate-pulse" />
             <img
               src={aboutImg}
-              alt="Chakra energy healing meditation"
-              className="relative z-10 w-full rounded-3xl object-cover shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-              style={{ maxHeight: "480px", objectFit: "cover" }}
+              alt="Archana Rai seated in meditation during a flower-blessing ceremony"
+              className="img-hover-warm relative z-10 w-full rounded-3xl object-cover shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+              style={{ maxHeight: "480px", objectFit: "cover", objectPosition: "center 42%" }}
               data-testid="about-image"
             />
-            <div className="absolute bottom-5 left-5 right-5 z-20 bg-background/70 backdrop-blur-md rounded-2xl p-4 border border-primary/15 shadow-lg">
+            <div className="absolute bottom-5 left-5 right-5 z-20 bg-background/75 backdrop-blur-md rounded-2xl p-4 border border-primary/25 shadow-lg">
               <p className="text-xs tracking-widest uppercase text-primary font-medium mb-1">Practice</p>
               <p className="font-serif text-base text-foreground">Reiki · Energy · Healing · Transformation</p>
             </div>
@@ -80,7 +82,9 @@ export function About() {
                   transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <CheckCircle2
+                    className={`w-5 h-5 mt-0.5 shrink-0 ${idx % 2 === 0 ? "text-primary" : "text-secondary"}`}
+                  />
                   <span className="text-sm text-foreground/80 font-light">{cred}</span>
                 </motion.div>
               ))}

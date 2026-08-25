@@ -14,6 +14,7 @@ import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { HealerProfile } from "@/components/HealerProfile";
+import { Biography } from "@/components/Biography";
 import { ChakraDivider } from "@/components/ChakraDivider";
 import { Footer } from "@/components/Footer";
 
@@ -29,6 +30,7 @@ function Home() {
         <ChakraDivider />
         <About />
         <HealerProfile />
+        <Biography />
         <Stats />
         <Sessions />
         <Testimonials />

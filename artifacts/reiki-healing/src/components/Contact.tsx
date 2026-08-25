@@ -60,7 +60,7 @@ export function Contact() {
             <Heart className="w-3 h-3" /> Contact
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
-            Get <span className="text-primary italic">In Touch</span>
+            Get <span className="text-aura-teal italic">In Touch</span>
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-5" />
           <p className="text-foreground/60 font-light max-w-xl mx-auto text-base">

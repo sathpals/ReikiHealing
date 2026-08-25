@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-import handsEnergyImg  from "@assets/image_1778827454908.png";
+// Cropped from the right panel of image_1778827454908.png, which is a
+// two-photo collage with a blank seam and rendered badly in a square tile.
+import handsEnergyImg  from "@assets/reiki-hands-golden-light_1778827454908.png";
 import handsLightImg   from "@assets/image_1778827461038.png";
 import chakraImg       from "@assets/image_1778827392136.png";
 import goddesImg       from "@assets/image_1778827437426.png";
@@ -15,11 +17,13 @@ import energyOrb       from "@assets/5tAGwr7iBrf7_UbScJGW7B49GtZhBcuH8jEQJUO3gpV
 import mudraSwirl      from "@assets/DwU-fmR6lN6hMQTT9cgURu-9HDSdVgU7zAwLa3xWyF0OO2vDKvZ5mz_96p3qJ_1778830218142.jpeg";
 import digitalFace     from "@assets/dY4WgUsUt-6lqXjAck16HttqcUi-3-XhJa62yRr7om7_NjclCIsp38IylZNTl_1778830221686.jpeg";
 import divineGoddess   from "@assets/upRkC9WdOUahu9jCtZG5vSXP68AfrXT0-sUG0CUgzSdXVMdptihJw0cSz9HXS_1778830247395.jpeg";
+import goldenAura      from "@assets/golden-aura-meditation.jpeg";
 
 type Category = "all" | "sessions" | "tools" | "spaces";
 
 const items = [
   { title: "Reiki Healing Hands",    subtitle: "Sacred energy transfer",    category: "sessions" as Category, img: handsEnergyImg },
+  { title: "Golden Aura Awakening",  subtitle: "Radiant energy field",      category: "sessions" as Category, img: goldenAura },
   { title: "Energy Orb Session",     subtitle: "Channelled healing light",  category: "sessions" as Category, img: energyOrb },
   { title: "Chakra Stones",          subtitle: "Sacred tools",              category: "tools"    as Category, img: chakraStones },
   { title: "Divine Feminine",        subtitle: "Sacred wisdom",             category: "spaces"   as Category, img: goddesImg },
@@ -49,6 +53,7 @@ export function Gallery() {
 
   return (
     <section id="gallery" className="py-24 md:py-32 bg-background relative overflow-hidden">
+      <div className="veil-lavender absolute inset-0 pointer-events-none" />
       <div className="absolute right-0 bottom-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute left-0 top-1/3 w-[400px] h-[400px] bg-secondary/8 rounded-full blur-[160px] pointer-events-none" />
 
@@ -62,7 +67,7 @@ export function Gallery() {
         >
           <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">Gallery</span>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3 mb-4">
-            Glimpses From Our <span className="text-primary">Healing Space</span>
+            Glimpses From Our <span className="text-aura-teal italic">Healing Space</span>
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-6" />
           <p className="text-foreground/60 font-light max-w-xl mx-auto text-base">

@@ -62,7 +62,7 @@ export function FAQ() {
             F.A.Q
           </span>
           <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
-            Frequently Asked <span className="text-primary italic">Questions</span>
+            Frequently Asked <span className="text-aura-teal italic">Questions</span>
           </h2>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-5" />
           <p className="text-foreground/60 font-light text-base max-w-xl mx-auto">

@@ -4,27 +4,21 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
+// PORT/BASE_PATH are injected by the Replit runtime. Outside that runtime
+// (local builds, `pnpm -r run build` from the workspace root) they are absent,
+// so fall back to defaults rather than failing the build. Explicitly set
+// values still win, and invalid ones are still rejected.
+const DEFAULT_PORT = 8080;
+const DEFAULT_BASE_PATH = "/";
+
 const rawPort = process.env.PORT;
-
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
-
-const port = Number(rawPort);
+const port = rawPort ? Number(rawPort) : DEFAULT_PORT;
 
 if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    "BASE_PATH environment variable is required but was not provided.",
-  );
-}
+const basePath = process.env.BASE_PATH || DEFAULT_BASE_PATH;
 
 export default defineConfig({
   base: basePath,

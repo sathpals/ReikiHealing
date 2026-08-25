@@ -14,6 +14,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden bg-background"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="aura-field" />
         <div className="absolute top-[15%] left-[10%] w-72 h-72 bg-primary/15 rounded-full blur-[120px] animate-float-1" />
         <div className="absolute top-[35%] right-[5%] w-80 h-80 bg-accent/12 rounded-full blur-[140px] animate-float-2" />
         <div className="absolute bottom-[15%] left-[30%] w-96 h-96 bg-secondary/12 rounded-full blur-[150px] animate-float-3" />
@@ -40,7 +41,7 @@ export function Hero() {
           >
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-foreground leading-[1.1]">
               Reconnect With{" "}
-              <span className="text-primary italic">Your Inner Light</span>
+              <span className="text-aura-teal italic">Your Inner Light</span>
             </h1>
           </motion.div>
 
@@ -61,7 +62,8 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="text-base px-8 py-6 rounded-full bg-primary text-primary-foreground shadow-[0_4px_20px_rgba(0,160,140,0.35)] hover:shadow-[0_6px_30px_rgba(0,160,140,0.5)] transition-all duration-300 hover:scale-105"
+              variant="ghost"
+              className="btn-aura no-default-hover-elevate text-base px-8 py-6 rounded-full text-primary-foreground transition-all duration-500"
               onClick={() => scrollTo("connect")}
               data-testid="button-book-session"
             >
@@ -82,7 +84,7 @@ export function Hero() {
           initial={{ opacity: 0, x: 40, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1.3, delay: 0.3, ease: "easeOut" }}
-          className="relative flex justify-center items-center"
+          className="img-aura relative flex justify-center items-center"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-10 lg:hidden" />
           <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
@@ -104,7 +106,9 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-xs tracking-widest uppercase text-foreground/30">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-primary/40 to-transparent animate-pulse" />
+        <div className="scroll-mouse" aria-hidden="true">
+          <span className="scroll-mouse__wheel" />
+        </div>
       </motion.div>
     </section>
   );

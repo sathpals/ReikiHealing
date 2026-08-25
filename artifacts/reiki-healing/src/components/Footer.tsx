@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Facebook, Linkedin, Mail } from "lucide-react";
+import { Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
 
 const usefulLinks = ["Home", "About Us", "Services", "FAQ", "Contact"];
 const services = [
@@ -13,8 +13,10 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-primary/8 pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
-          <div className="lg:col-span-1">
+        {/* Five equal columns on desktop; the brand column only spans
+            both tracks on tablet so it isn't left orphaned. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10 mb-14">
+          <div className="md:col-span-2 lg:col-span-1">
             <h3 className="font-serif text-2xl text-primary mb-3">Divine Healing</h3>
             <p className="text-sm text-muted-foreground font-light leading-relaxed mb-5">
               Gentle Reiki, energy healing, and spiritual guidance to bring calm, clarity, and balance back into your life.
@@ -58,13 +60,12 @@ export function Footer() {
             <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
               Follow along for gentle reminders, reflections, and behind-the-scenes glimpses of the practice.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap items-center gap-4">
               {[
                 { Icon: Twitter, label: "Twitter" },
                 { Icon: Facebook, label: "Facebook" },
                 { Icon: Instagram, label: "Instagram" },
                 { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Mail, label: "Email" },
               ].map(({ Icon, label }) => (
                 <a
                   key={label}
@@ -77,13 +78,13 @@ export function Footer() {
                 </a>
               ))}
             </div>
+          </div>
 
-            <div className="mt-8 border-t border-primary/8 pt-6">
-              <p className="text-xs text-foreground/40 font-medium mb-3 uppercase tracking-wider">Newsletter</p>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                Receive gentle reminders, healing reflections, and news of upcoming workshops — never more than once a month.
-              </p>
-            </div>
+          <div>
+            <h4 className="text-xs font-medium tracking-[0.2em] uppercase text-foreground/60 mb-5">Newsletter</h4>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed">
+              Receive gentle reminders, healing reflections, and news of upcoming workshops — never more than once a month.
+            </p>
           </div>
         </div>
 

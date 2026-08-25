@@ -79,50 +79,53 @@
   --elevate-1: rgba(0,0,0, .04);
   --elevate-2: rgba(0,0,0, .09);
 
-  --background: 38 60% 97%;
-  --foreground: 240 40% 12%;
+  /* Cream #FCF9F2 / Deep indigo #171A3A */
+  --background: 42 63% 97%;
+  --foreground: 235 43% 15%;
 
-  --border: 260 18% 84%;
+  --border: 257 30% 88%;
 
-  --card: 38 50% 99%;
-  --card-foreground: 240 40% 12%;
-  --card-border: 260 18% 86%;
+  --card: 40 55% 99%;
+  --card-foreground: 235 43% 15%;
+  --card-border: 257 30% 89%;
 
-  --sidebar: 38 40% 95%;
-  --sidebar-foreground: 240 40% 12%;
-  --sidebar-border: 260 18% 84%;
-  --sidebar-primary: 174 80% 34%;
+  --sidebar: 42 45% 95%;
+  --sidebar-foreground: 235 43% 15%;
+  --sidebar-border: 257 30% 88%;
+  --sidebar-primary: 175 81% 38%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 318 75% 52%;
+  --sidebar-accent: 255 58% 55%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 174 80% 34%;
+  --sidebar-ring: 175 81% 38%;
 
-  --popover: 38 50% 99%;
-  --popover-foreground: 240 40% 12%;
-  --popover-border: 260 18% 86%;
+  --popover: 40 55% 99%;
+  --popover-foreground: 235 43% 15%;
+  --popover-border: 257 30% 89%;
 
-  --primary: 174 80% 34%;
+  /* Teal #12AFA3 */
+  --primary: 175 81% 38%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 270 65% 45%;
+  /* Soft purple #8064D8, darkened for white-on-purple legibility */
+  --secondary: 255 58% 55%;
   --secondary-foreground: 0 0% 100%;
 
-  --muted: 260 20% 93%;
-  --muted-foreground: 250 20% 42%;
+  --muted: 257 35% 94%;
+  --muted-foreground: 250 22% 43%;
 
-  --accent: 318 75% 52%;
+  --accent: 345 60% 55%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
 
-  --input: 260 18% 88%;
-  --ring: 174 80% 34%;
-  --chart-1: 318 75% 52%;
-  --chart-2: 270 65% 45%;
-  --chart-3: 174 80% 34%;
-  --chart-4: 250 20% 42%;
-  --chart-5: 160 70% 40%;
+  --input: 257 28% 89%;
+  --ring: 175 81% 38%;
+  --chart-1: 175 81% 38%;
+  --chart-2: 255 58% 55%;
+  --chart-3: 40 74% 63%;
+  --chart-4: 13 76% 80%;
+  --chart-5: 257 59% 78%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: 'Cormorant Garamond', serif;
@@ -179,50 +182,53 @@
   --elevate-1: rgba(0,0,0, .04);
   --elevate-2: rgba(0,0,0, .09);
 
-  --background: 38 60% 97%;
-  --foreground: 240 40% 12%;
+  /* Cream #FCF9F2 / Deep indigo #171A3A */
+  --background: 42 63% 97%;
+  --foreground: 235 43% 15%;
 
-  --border: 260 18% 84%;
+  --border: 257 30% 88%;
 
-  --card: 38 50% 99%;
-  --card-foreground: 240 40% 12%;
-  --card-border: 260 18% 86%;
+  --card: 40 55% 99%;
+  --card-foreground: 235 43% 15%;
+  --card-border: 257 30% 89%;
 
-  --sidebar: 38 40% 95%;
-  --sidebar-foreground: 240 40% 12%;
-  --sidebar-border: 260 18% 84%;
-  --sidebar-primary: 174 80% 34%;
+  --sidebar: 42 45% 95%;
+  --sidebar-foreground: 235 43% 15%;
+  --sidebar-border: 257 30% 88%;
+  --sidebar-primary: 175 81% 38%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 318 75% 52%;
+  --sidebar-accent: 255 58% 55%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 174 80% 34%;
+  --sidebar-ring: 175 81% 38%;
 
-  --popover: 38 50% 99%;
-  --popover-foreground: 240 40% 12%;
-  --popover-border: 260 18% 86%;
+  --popover: 40 55% 99%;
+  --popover-foreground: 235 43% 15%;
+  --popover-border: 257 30% 89%;
 
-  --primary: 174 80% 34%;
+  /* Teal #12AFA3 */
+  --primary: 175 81% 38%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 270 65% 45%;
+  /* Soft purple #8064D8, darkened for white-on-purple legibility */
+  --secondary: 255 58% 55%;
   --secondary-foreground: 0 0% 100%;
 
-  --muted: 260 20% 93%;
-  --muted-foreground: 250 20% 42%;
+  --muted: 257 35% 94%;
+  --muted-foreground: 250 22% 43%;
 
-  --accent: 318 75% 52%;
+  --accent: 345 60% 55%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
 
-  --input: 260 18% 88%;
-  --ring: 174 80% 34%;
-  --chart-1: 318 75% 52%;
-  --chart-2: 270 65% 45%;
-  --chart-3: 174 80% 34%;
-  --chart-4: 250 20% 42%;
-  --chart-5: 160 70% 40%;
+  --input: 257 28% 89%;
+  --ring: 175 81% 38%;
+  --chart-1: 175 81% 38%;
+  --chart-2: 255 58% 55%;
+  --chart-3: 40 74% 63%;
+  --chart-4: 13 76% 80%;
+  --chart-5: 257 59% 78%;
 
   --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
@@ -241,6 +247,346 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* ============================================================
+   SPIRITUAL WELLNESS PALETTE
+   Brand accent tokens used for decorative colour only. The
+   shadcn tokens above still drive all component semantics.
+   RGB triplets are space-separated so they compose with
+   `rgb(var(--x) / <alpha>)`.
+   ============================================================ */
+:root {
+  --spirit-indigo: #171A3A;
+  --spirit-teal: #12AFA3;
+  --spirit-turquoise: #6DDDD3;
+  --spirit-lavender: #B9A7E8;
+  --spirit-purple: #8064D8;
+  --spirit-gold: #E7B85C;
+  --spirit-peach: #F3B7A6;
+  --spirit-rose: #E88BA6;
+  --spirit-cream: #FCF9F2;
+
+  --spirit-indigo-rgb: 23 26 58;
+  --spirit-teal-rgb: 18 175 163;
+  --spirit-turquoise-rgb: 109 221 211;
+  --spirit-lavender-rgb: 185 167 232;
+  --spirit-purple-rgb: 128 100 216;
+  --spirit-gold-rgb: 231 184 92;
+  --spirit-peach-rgb: 243 183 166;
+  --spirit-rose-rgb: 232 139 166;
+
+  --ease-soft: cubic-bezier(.22, .8, .3, 1);
+}
+
+@layer components {
+  /* ---- Ambient colour fields -------------------------------
+     Absolutely-positioned wash placed behind section content.
+     Parent needs `relative`; content needs a higher z-index. */
+  .aura-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(42% 55% at 12% 18%, rgb(var(--spirit-teal-rgb) / 0.13), transparent 70%),
+      radial-gradient(38% 50% at 88% 26%, rgb(var(--spirit-lavender-rgb) / 0.20), transparent 72%),
+      radial-gradient(46% 55% at 68% 90%, rgb(var(--spirit-peach-rgb) / 0.17), transparent 70%);
+  }
+
+  .aura-field--soft {
+    background:
+      radial-gradient(45% 55% at 15% 20%, rgb(var(--spirit-lavender-rgb) / 0.13), transparent 72%),
+      radial-gradient(45% 55% at 85% 78%, rgb(var(--spirit-peach-rgb) / 0.12), transparent 72%);
+  }
+
+  .aura-field--gold {
+    background:
+      radial-gradient(45% 55% at 18% 22%, rgb(var(--spirit-purple-rgb) / 0.10), transparent 72%),
+      radial-gradient(40% 50% at 82% 30%, rgb(var(--spirit-gold-rgb) / 0.14), transparent 72%),
+      radial-gradient(45% 50% at 60% 92%, rgb(var(--spirit-teal-rgb) / 0.10), transparent 72%);
+  }
+
+  /* ---- Section veils ---------------------------------------
+     Very light top-to-bottom tints so adjacent sections read
+     as distinct without introducing hard colour blocks. */
+  .veil-lavender {
+    background: linear-gradient(180deg,
+      rgb(var(--spirit-lavender-rgb) / 0) 0%,
+      rgb(var(--spirit-lavender-rgb) / 0.11) 45%,
+      rgb(var(--spirit-lavender-rgb) / 0) 100%);
+  }
+
+  .veil-peach {
+    background: linear-gradient(180deg,
+      rgb(var(--spirit-peach-rgb) / 0) 0%,
+      rgb(var(--spirit-peach-rgb) / 0.13) 50%,
+      rgb(var(--spirit-peach-rgb) / 0) 100%);
+  }
+
+  .veil-teal {
+    background: linear-gradient(180deg,
+      rgb(var(--spirit-turquoise-rgb) / 0) 0%,
+      rgb(var(--spirit-turquoise-rgb) / 0.13) 50%,
+      rgb(var(--spirit-turquoise-rgb) / 0) 100%);
+  }
+
+  .veil-gold {
+    background: linear-gradient(180deg,
+      rgb(var(--spirit-gold-rgb) / 0) 0%,
+      rgb(var(--spirit-gold-rgb) / 0.11) 50%,
+      rgb(var(--spirit-gold-rgb) / 0) 100%);
+  }
+
+  /* ---- Soft multi-hue halo behind imagery ------------------ */
+  .img-aura {
+    position: relative;
+  }
+
+  .img-aura::before {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(46px);
+    opacity: 0.7;
+    pointer-events: none;
+    background:
+      radial-gradient(40% 40% at 24% 26%, rgb(var(--spirit-turquoise-rgb) / 0.55), transparent 70%),
+      radial-gradient(40% 40% at 78% 30%, rgb(var(--spirit-lavender-rgb) / 0.50), transparent 70%),
+      radial-gradient(45% 45% at 60% 84%, rgb(var(--spirit-peach-rgb) / 0.48), transparent 70%);
+    transition: opacity .6s ease, filter .6s ease;
+  }
+
+  .img-aura:hover::before {
+    opacity: 0.92;
+    filter: blur(52px);
+  }
+
+  .img-aura--gold::before {
+    background:
+      radial-gradient(42% 42% at 25% 24%, rgb(var(--spirit-purple-rgb) / 0.42), transparent 70%),
+      radial-gradient(42% 42% at 80% 32%, rgb(var(--spirit-gold-rgb) / 0.48), transparent 70%),
+      radial-gradient(45% 45% at 58% 86%, rgb(var(--spirit-teal-rgb) / 0.38), transparent 70%);
+  }
+
+  /* ---- Accent cards ---------------------------------------
+     Per-card colour comes from an inline `--card-accent-rgb`,
+     defaulting to teal. Backgrounds stay cream/white; the
+     accent only touches icon, border and hover glow. */
+  .accent-card {
+    --card-accent-rgb: var(--spirit-teal-rgb);
+    border-color: rgb(var(--card-accent-rgb) / 0.26);
+    transition:
+      transform .45s var(--ease-soft),
+      box-shadow .45s ease,
+      border-color .45s ease;
+  }
+
+  .accent-card:hover {
+    transform: translateY(-6px);
+    border-color: rgb(var(--card-accent-rgb) / 0.55);
+    box-shadow:
+      0 18px 40px -18px rgb(var(--card-accent-rgb) / 0.55),
+      0 2px 10px -4px rgb(var(--spirit-indigo-rgb) / 0.08);
+  }
+
+  /* `--card-ink-rgb` is the deeper sibling of the pastel accent —
+     pastels alone are too light for icons/text on cream. */
+  .accent-card__icon {
+    background: linear-gradient(140deg,
+      rgb(var(--card-accent-rgb) / 0.26),
+      rgb(var(--card-accent-rgb) / 0.08));
+    color: rgb(var(--card-ink-rgb, var(--card-accent-rgb)));
+    box-shadow: 0 4px 14px -5px rgb(var(--card-accent-rgb) / 0.5);
+    transition: transform .4s var(--ease-soft), box-shadow .4s ease;
+  }
+
+  .accent-card:hover .accent-card__icon {
+    transform: scale(1.07);
+    box-shadow: 0 8px 22px -6px rgb(var(--card-accent-rgb) / 0.65);
+  }
+
+  .accent-card__wash {
+    background: linear-gradient(150deg,
+      rgb(var(--card-accent-rgb) / 0.11),
+      transparent 62%);
+  }
+
+  .accent-card__title {
+    transition: color .35s ease;
+  }
+
+  .accent-card:hover .accent-card__title {
+    color: rgb(var(--card-ink-rgb, var(--card-accent-rgb)));
+  }
+
+  /* ---- Generic hover lift for timeline / cert cards -------- */
+  .lift-card {
+    --card-accent-rgb: var(--spirit-teal-rgb);
+    border-color: rgb(var(--card-accent-rgb) / 0.22);
+    transition:
+      transform .4s var(--ease-soft),
+      box-shadow .4s ease,
+      border-color .4s ease;
+  }
+
+  .lift-card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(var(--card-accent-rgb) / 0.45);
+    box-shadow: 0 16px 34px -20px rgb(var(--card-accent-rgb) / 0.6);
+  }
+
+  /* ---- Vibrant teal display text --------------------------- */
+  .text-aura-teal {
+    color: var(--spirit-teal);
+  }
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .text-aura-teal {
+      background-image: linear-gradient(100deg, #0FB5A7 0%, #12AFA3 42%, #35C8BB 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      /* italic descenders otherwise clip at the box edge */
+      padding-right: 0.08em;
+    }
+  }
+
+  /* Light sibling of .text-aura-teal, for headings that sit on the
+     dark image sections (Stats, Testimonials) where #12AFA3 is too
+     dark to read. */
+  .text-aura-turquoise {
+    color: var(--spirit-turquoise);
+  }
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .text-aura-turquoise {
+      background-image: linear-gradient(100deg, #6DDDD3 0%, #93E8E0 48%, #C3ECF2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      padding-right: 0.08em;
+    }
+  }
+
+  /* ---- Primary CTA: teal at rest, teal→purple on hover ----- */
+  .btn-aura {
+    background-image: linear-gradient(115deg, #12AFA3 0%, #14B5A9 55%, #2AC0B4 100%);
+    box-shadow: 0 6px 22px -6px rgb(var(--spirit-teal-rgb) / 0.55);
+    transition:
+      background-image .45s ease,
+      box-shadow .45s ease,
+      transform .35s var(--ease-soft);
+  }
+
+  .btn-aura:hover {
+    background-image: linear-gradient(115deg, #12AFA3 0%, #5A7CD6 58%, #8064D8 100%);
+    box-shadow: 0 12px 30px -8px rgb(var(--spirit-purple-rgb) / 0.55);
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  /* ---- Nav links: gradient underline on hover -------------- */
+  .nav-link {
+    position: relative;
+    transition: color .3s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--spirit-teal), var(--spirit-purple));
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .35s var(--ease-soft);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ---- Timeline dot with per-entry glow -------------------- */
+  /* `--dot-core` is the saturated centre, `--card-accent-rgb` the
+     pastel it glows with. */
+  .timeline-dot {
+    --card-accent-rgb: var(--spirit-teal-rgb);
+    background: var(--dot-core, rgb(var(--card-accent-rgb)));
+    box-shadow:
+      0 0 0 4px rgb(var(--card-accent-rgb) / 0.18),
+      0 0 14px 2px rgb(var(--card-accent-rgb) / 0.6);
+  }
+
+  /* ---- Hero scroll indicator: mouse outline + wheel -------- */
+  .scroll-mouse {
+    width: 26px;
+    height: 42px;
+    border-radius: 999px;
+    border: 2px solid rgb(var(--spirit-teal-rgb) / 0.45);
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
+    box-shadow: 0 0 16px -5px rgb(var(--spirit-teal-rgb) / 0.55);
+    transition: border-color .4s ease, box-shadow .4s ease;
+  }
+
+  .scroll-mouse:hover {
+    border-color: rgb(var(--spirit-purple-rgb) / 0.6);
+    box-shadow: 0 0 20px -5px rgb(var(--spirit-purple-rgb) / 0.6);
+  }
+
+  .scroll-mouse__wheel {
+    width: 4px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--spirit-teal), var(--spirit-purple));
+    animation: scrollWheel 1.9s var(--ease-soft) infinite;
+  }
+
+  /* ---- Gentle image hover for gallery / portraits ---------- */
+  .img-hover-warm {
+    transition: transform .6s var(--ease-soft), box-shadow .6s ease;
+  }
+
+  .img-hover-warm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 22px 50px -24px rgb(var(--spirit-purple-rgb) / 0.5);
+  }
+}
+
+/* Wheel drifts down and fades, like a scroll gesture */
+@keyframes scrollWheel {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  30%  { opacity: 1; transform: translateY(0); }
+  70%  { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 0; transform: translateY(12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accent-card:hover,
+  .lift-card:hover,
+  .btn-aura:hover,
+  .img-hover-warm:hover,
+  .accent-card:hover .accent-card__icon {
+    transform: none;
+  }
+
+  .scroll-mouse__wheel {
+    animation: none;
+    opacity: 0.8;
+  }
+
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3 {
+    animation: none;
   }
 }
 

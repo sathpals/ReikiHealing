@@ -7,6 +7,7 @@ const links = [
   { label: "Home",    id: "home" },
   { label: "About",   id: "about" },
   { label: "Healer",  id: "healer" },
+  { label: "Her Story", id: "story" },
   { label: "Services",id: "services" },
   { label: "Gallery", id: "gallery" },
   { label: "FAQ",     id: "faq" },
@@ -53,7 +54,7 @@ export function Navbar() {
               <button
                 key={l.id}
                 onClick={() => scrollTo(l.id)}
-                className="hover:text-primary transition-colors duration-200"
+                className="nav-link hover:text-primary"
                 data-testid={`nav-${l.id}`}
               >
                 {l.label}

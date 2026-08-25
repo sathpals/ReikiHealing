@@ -46,7 +46,7 @@ export function Stats() {
         >
           <h3 className="font-serif text-3xl md:text-4xl text-white">
             Healing Lives With{" "}
-            <span className="text-cyan-200 italic">Care & Compassion</span>
+            <span className="text-aura-turquoise italic">Care & Compassion</span>
           </h3>
           <p className="text-white/65 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Supporting emotional, mental, and spiritual wellness through personalized healing sessions and compassionate guidance.
