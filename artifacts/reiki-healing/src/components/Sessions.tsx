@@ -1,106 +1,129 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Sparkles, Shield, Eye, Target, Wifi, MapPin } from "lucide-react";
+import { ChakraImageOrnament } from "@/components/decor/Ornaments";
+import crownChakra from "@assets/chakras/chakra-crown.png";
+import { Aperture, ArrowRight, Feather, Flame, HandHeart, House, Sparkles, Sprout, WalletCards, Waves } from "lucide-react";
+import { scrollToSection as scrollTo } from "@/lib/scrollToSection";
 
+// Thin outline icons chosen to suit each service
 const services = [
   {
     icon: Sparkles,
-    title: "Reiki & Energy Healing",
+    title: "Durga Reiki",
     description:
-      "A gentle, hands-on (or hands-above) session that clears energetic blockages, calms the nervous system, and supports the body's natural ability to restore itself.",
+      "A spiritual energy practice connected with Shakti, associated with strength, protection, compassion, transformation and awakening.",
   },
   {
-    icon: Shield,
-    title: "Removal & Protection",
+    icon: HandHeart,
+    title: "Touchless Distance Healing",
     description:
-      "Clear heavy energy, stagnation, and unwanted attachments — then close with grounding and protective practices you can carry into daily life.",
+      "Receive spiritual energy support from the comfort and privacy of your own space.",
   },
   {
-    icon: Eye,
-    title: "Spiritual Readings & Guidance",
+    icon: WalletCards,
+    title: "Card Reader & Guidance",
     description:
       "Intuitive readings that offer perspective on life transitions, relationships, or decisions — always delivered with warmth, honesty, and care.",
   },
   {
-    icon: Target,
+    icon: Sprout,
     title: "Manifestation & Growth",
     description:
       "Guided sessions that help you set clear intentions, release limiting beliefs, and align your energy with the life you want to grow into.",
   },
   {
-    icon: Wifi,
-    title: "Distance Reiki Session",
+    icon: Waves,
+    title: "Energy Balancing",
     description:
-      "Receive the full benefit of a Reiki session from the comfort of your home — connection, presence, and healing energy are not bound by distance.",
+      "A gentle session designed to restore harmony within your energy field and promote calm, stability and overall well-being.",
   },
   {
-    icon: MapPin,
-    title: "In-Person Reiki Session",
+    icon: Flame,
+    title: "Personalized Energy Healing",
     description:
-      "A 60-minute in-studio Reiki session in a calm, scent-soft room — designed for deep rest, nervous-system recovery, and quiet renewal.",
+      "A customized healing session focused on your individual emotional, spiritual and energetic needs.",
+  },
+  {
+    icon: House,
+    title: "Vastu Cleansing",
+    description:
+      "Spiritual energy cleansing intended to create a more peaceful, positive and harmonious living or working space.",
+  },
+  {
+    icon: Aperture,
+    title: "Aura Reader",
+    description:
+      "An intuitive reading to explore your energy field, emotional patterns and areas that may benefit from greater balance.",
+  },
+  {
+    icon: Feather,
+    title: "Angel Healing",
+    description:
+      "A gentle spiritual practice inviting angelic guidance and positive energy to support peace, comfort and inner clarity.",
   },
 ];
 
 export function Sessions() {
-  const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
   return (
-    <section id="services" className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section id="services" className="section-y bg-background relative overflow-hidden">
       <div className="veil-peach absolute inset-0 pointer-events-none" />
       <div className="absolute left-0 top-1/3 w-[400px] h-[400px] bg-accent/8 rounded-full blur-[160px] pointer-events-none" />
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+      <ChakraImageOrnament src={crownChakra} size="clamp(10rem, 18vw, 16rem)" motion="spin" opacity={0.09} className="-left-12 top-16 hidden sm:block" />
+      <div className="container-page relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="section-head"
         >
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">Services</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3 mb-4">
+          <span className="section-eyebrow">Services</span>
+          <h2 className="section-title">
             Check our <span className="text-aura-teal italic">Services</span>
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-6" />
-          <p className="text-foreground/60 font-light max-w-2xl mx-auto text-base leading-relaxed">
+          <div className="section-rule" />
+          <p className="section-lede">
             Each session is personalized to where you are today. Whether you need deep rest, emotional release, or spiritual clarity, there is a path here for you.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, delay: idx * 0.09 }}
-                className="group relative h-full bg-card/40 border border-primary/10 rounded-2xl p-7 text-center hover:border-primary/40 transition-all duration-500 hover:shadow-[0_0_35px_rgba(218,165,32,0.1)] overflow-hidden"
+                transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
+                className="group relative flex h-full flex-col rounded-2xl border border-primary/10 bg-card/80 p-7 sm:p-8 text-left transition-colors duration-500 hover:bg-primary/[0.07] hover:border-primary/25"
                 data-testid={`service-card-${idx}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative z-10 flex h-full flex-col items-center">
-                  <div className="w-14 h-14 rounded-2xl bg-secondary/30 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors duration-300 shadow-[0_0_15px_rgba(107,33,168,0.2)] group-hover:shadow-[0_0_20px_rgba(218,165,32,0.2)]">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h4 className="font-serif text-xl text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h4>
-                  <p className="text-sm text-foreground/75 font-normal leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="mt-auto text-xs tracking-wider uppercase text-primary hover:text-primary hover:bg-primary/10 rounded-full px-4 transition-all duration-300"
-                    onClick={() => scrollTo("connect")}
-                    data-testid={`service-book-${idx}`}
-                  >
-                    Book This Session
-                  </Button>
-                </div>
+                {/* short gold accent line — lengthens on hover */}
+                <span
+                  aria-hidden="true"
+                  className="block h-[2px] w-11 transition-[width] duration-500 ease-out group-hover:w-16"
+                  style={{ background: "rgb(var(--spirit-gold-rgb) / 0.85)" }}
+                />
+
+                <Icon className="mt-7 w-7 h-7 text-primary" strokeWidth={1.5} aria-hidden="true" />
+
+                <h4 className="mt-6 font-serif text-2xl text-foreground leading-snug text-balance">
+                  {service.title}
+                </h4>
+                <p className="mt-3 mb-6 text-[15px] text-foreground/70 font-light leading-[1.75] text-pretty">
+                  {service.description}
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => scrollTo("connect")}
+                  className="mt-auto inline-flex items-center gap-2 self-start text-xs font-semibold tracking-[0.18em] uppercase text-primary/90 transition-colors duration-300 hover:text-primary"
+                  data-testid={`service-book-${idx}`}
+                >
+                  Book This Session
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
               </motion.div>
             );
           })}

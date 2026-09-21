@@ -52,30 +52,30 @@ export function Gallery() {
   const filtered = items.filter((i) => active === "all" || i.category === active);
 
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section id="gallery" className="section-y bg-background relative overflow-hidden">
       <div className="veil-lavender absolute inset-0 pointer-events-none" />
       <div className="absolute right-0 bottom-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute left-0 top-1/3 w-[400px] h-[400px] bg-secondary/8 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="container-page relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="section-head"
         >
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">Gallery</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3 mb-4">
+          <span className="section-eyebrow">Gallery</span>
+          <h2 className="section-title">
             Glimpses From Our <span className="text-aura-teal italic">Healing Space</span>
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto mb-6" />
-          <p className="text-foreground/60 font-light max-w-xl mx-auto text-base">
+          <div className="section-rule" />
+          <p className="section-lede">
             A look inside the sessions, sacred tools, and quiet corners where the work unfolds.
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10">
           {filters.map((f) => (
             <button
               key={f.value}
@@ -92,7 +92,7 @@ export function Gallery() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           <AnimatePresence>
             {filtered.map((item, idx) => (
               <motion.div
@@ -111,9 +111,9 @@ export function Gallery() {
                   alt={item.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
-                  <p className="font-serif text-sm text-white leading-snug">{item.title}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                  <p className="font-serif text-xs sm:text-sm text-white leading-snug">{item.title}</p>
                   <p className="text-[10px] text-white/60 uppercase tracking-wider mt-0.5">{item.subtitle}</p>
                 </div>
               </motion.div>
@@ -129,7 +129,7 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/85 backdrop-blur-md p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-foreground/85 backdrop-blur-md p-4"
             onClick={() => setLightbox(null)}
           >
             <motion.div
@@ -145,13 +145,14 @@ export function Gallery() {
                 alt={lightbox.title}
                 className="w-full object-cover max-h-[75vh]"
               />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/85 to-transparent p-6">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-foreground/85 to-transparent p-5 sm:p-6 pt-12">
                 <p className="font-serif text-xl text-white">{lightbox.title}</p>
                 <p className="text-xs text-white/55 uppercase tracking-widest mt-1">{lightbox.subtitle}</p>
               </div>
               <button
                 onClick={() => setLightbox(null)}
                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm text-white flex items-center justify-center hover:bg-white/35 transition-colors text-xl font-light leading-none"
+                aria-label="Close image"
               >
                 ×
               </button>

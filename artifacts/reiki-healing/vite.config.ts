@@ -9,7 +9,9 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 // so fall back to defaults rather than failing the build. Explicitly set
 // values still win, and invalid ones are still rejected.
 const DEFAULT_PORT = 8080;
-const DEFAULT_BASE_PATH = "/";
+// Relative base: the built site works from any folder on the host
+// (e.g. aurahealz.com/ or aurahealz.com/v1/) without rebuilding.
+const DEFAULT_BASE_PATH = "./";
 
 const rawPort = process.env.PORT;
 const port = rawPort ? Number(rawPort) : DEFAULT_PORT;
@@ -20,12 +22,39 @@ if (Number.isNaN(port) || port <= 0) {
 
 const basePath = process.env.BASE_PATH || DEFAULT_BASE_PATH;
 
+/**
+ * The contact form posts to send-mail.php, which only runs on the PHP host
+ * (IONOS). The dev server would return the file's source instead, so the form
+ * always failed locally. This stub answers that one request during `vite dev`
+ * and prints the message in the terminal. It is not part of the build.
+ */
+const contactFormDevStub = {
+  name: "contact-form-dev-stub",
+  apply: "serve" as const,
+  configureServer(server: { middlewares: { use: (fn: (req: any, res: any, next: () => void) => void) => void } }) {
+    server.middlewares.use((req, res, next) => {
+      if (req.method !== "POST" || !req.url?.split("?")[0].endsWith("/send-mail.php")) {
+        return next();
+      }
+      let body = "";
+      req.on("data", (chunk: Buffer) => (body += chunk));
+      req.on("end", () => {
+        console.log("\n[dev] Contact form submission (not actually emailed):\n" + body + "\n");
+        res.setHeader("Content-Type", "application/json");
+        res.statusCode = 200;
+        res.end(JSON.stringify({ ok: true, dev: true }));
+      });
+    });
+  },
+};
+
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
+    contactFormDevStub,
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [

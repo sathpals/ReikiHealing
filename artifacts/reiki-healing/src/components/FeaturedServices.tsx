@@ -8,9 +8,9 @@ import bgImg from "@assets/image_1778827461038.png";
 const items = [
   {
     icon: MessageCircle,
-    title: "Connect with Me",
+    title: "Connect with Archana",
     description:
-      "Begin with a free 15-minute discovery call to share what you're seeking and find the session that fits you best.",
+      "Begin with a conversation to share what you are seeking and understand which session may suit you best.",
     accent: "var(--spirit-turquoise-rgb)",
     ink: "var(--spirit-teal-rgb)",
   },
@@ -18,7 +18,7 @@ const items = [
     icon: CalendarHeart,
     title: "Choose Your Session",
     description:
-      "Pick from in-person Reiki, distance healing, energy clearing, or a guided spiritual reading — each tailored to you.",
+      "Choose from touchless distance healing, energy balancing, guided meditation or spiritual guidance according to your intention and comfort.",
     accent: "var(--spirit-lavender-rgb)",
     ink: "var(--spirit-purple-rgb)",
   },
@@ -26,7 +26,7 @@ const items = [
     icon: Flower2,
     title: "Healing Session",
     description:
-      "Settle into a calm, restorative space where energy is gently rebalanced and emotional weight is released.",
+      "Settle into a calm, comfortable space while the spiritual energy practice is conducted through meditation and focused intention.",
     accent: "var(--spirit-peach-rgb)",
     ink: "196 112 92",
   },
@@ -34,7 +34,7 @@ const items = [
     icon: HandHeart,
     title: "After-Session Support",
     description:
-      "Receive personalized integration guidance, journaling prompts, and a follow-up check-in to carry the healing forward.",
+      "Receive simple integration guidance, reflection prompts or continued-practice suggestions when appropriate.",
     accent: "var(--spirit-gold-rgb)",
     ink: "176 124 34",
   },
@@ -42,28 +42,28 @@ const items = [
 
 export function FeaturedServices() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="section-y relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgImg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8">
+      <div className="container-page relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="section-head"
         >
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary/70">How It Works</span>
-          <h2 className="font-serif text-3xl md:text-4xl text-foreground mt-3">
-            Your Path to <span className="text-aura-teal italic">Healing</span>
+          <span className="section-eyebrow">How It Works</span>
+          <h2 className="section-title section-title--sm">
+           How It Works Your  <span className="text-aura-teal italic">Path to Healing</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {items.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -79,11 +79,11 @@ export function FeaturedServices() {
                     "--card-ink-rgb": item.ink,
                   } as CSSProperties
                 }
-                className="accent-card group relative bg-card/92 backdrop-blur-md border rounded-2xl p-6 text-center"
+                className="accent-card group relative flex h-full flex-col bg-card/92 backdrop-blur-md border rounded-2xl p-6 text-center"
                 data-testid={`featured-service-${idx}`}
               >
                 <div className="accent-card__wash absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                <div className="relative z-10 flex flex-col items-center">
+                <div className="relative z-10 flex h-full flex-col items-center">
                   <div className="accent-card__icon w-12 h-12 rounded-xl flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6" />
                   </div>

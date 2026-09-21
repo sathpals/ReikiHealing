@@ -1,14 +1,68 @@
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import chakraImg from "@assets/QvTKDCndyqLpuzUGs1JRRPN3t7IMr13yyc1ovC8VA0v1Q8aWBm3IXy7C7uQwF_1778830236086.jpeg";
+// Individual icons cut from the original chakra strip
+// (QvTKDC…_1778830236086.jpeg) with its black background removed.
+import rootImg from "@assets/chakras/chakra-root.png";
+import sacralImg from "@assets/chakras/chakra-sacral.png";
+import solarImg from "@assets/chakras/chakra-solar-plexus.png";
+import heartImg from "@assets/chakras/chakra-heart.png";
+import throatImg from "@assets/chakras/chakra-throat.png";
+import thirdEyeImg from "@assets/chakras/chakra-third-eye.png";
+import crownImg from "@assets/chakras/chakra-crown.png";
+
+type Chakra = {
+  name: string;
+  description: string;
+  img: string;
+  /** RGB triplet of the icon's own colour, used only for the hover glow */
+  glow: string;
+};
+
+const chakras: Chakra[] = [
+  { name: "Root Chakra",         description: "Grounding & Stability",       img: rootImg,     glow: "237 33 36" },
+  { name: "Sacral Chakra",       description: "Creativity & Emotions",       img: sacralImg,   glow: "246 130 31" },
+  { name: "Solar Plexus Chakra", description: "Confidence & Personal Power", img: solarImg,    glow: "253 204 7" },
+  { name: "Heart Chakra",        description: "Love & Compassion",           img: heartImg,    glow: "34 150 50" },
+  { name: "Throat Chakra",       description: "Communication & Expression",  img: throatImg,   glow: "20 170 225" },
+  { name: "Third Eye Chakra",    description: "Intuition & Awareness",       img: thirdEyeImg, glow: "48 72 190" },
+  { name: "Crown Chakra",        description: "Spiritual Connection",        img: crownImg,    glow: "120 50 220" },
+];
+
+function ChakraItem({ chakra, index }: { chakra: Chakra; index: number }) {
+  return (
+    <motion.li
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
+      style={{ "--chakra-glow": chakra.glow } as CSSProperties}
+      className="chakra-item group"
+    >
+      <div className="chakra-item__icon">
+        <img
+          src={chakra.img}
+          alt={`${chakra.name} symbol`}
+          width={256}
+          height={256}
+          loading="lazy"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <h3 className="mt-4 font-serif text-base lg:text-[17px] font-medium text-foreground leading-tight">
+        {chakra.name}
+      </h3>
+      <p className="mt-1.5 text-xs text-foreground/55 font-light leading-snug">
+        {chakra.description}
+      </p>
+    </motion.li>
+  );
+}
 
 export function ChakraDivider() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="relative overflow-hidden py-12 bg-background"
+    <section
+      aria-label="The seven chakras"
+      className="section-y-tight relative overflow-hidden bg-background"
     >
       {/* soft multi-hue bloom behind the chakra symbols */}
       <div
@@ -20,39 +74,17 @@ export function ChakraDivider() {
             "radial-gradient(28% 110% at 78% 50%, rgb(var(--spirit-gold-rgb) / 0.16), transparent 72%)",
         }}
       />
-      <div className="max-w-3xl mx-auto px-4 relative z-10">
-        {/* The source JPEG has a baked-in black background, so rather
-            than fight it, it sits on a deliberate deep-indigo plaque
-            (#171A3A from the palette). The black merges into the
-            plaque and the strip reads as an intentional inset band. */}
-        <div
-          className="group relative mx-auto max-w-2xl rounded-2xl px-6 py-4 overflow-hidden transition-all duration-500 hover:-translate-y-0.5"
-          style={{
-            background:
-              "linear-gradient(135deg, #171A3A 0%, #1E2350 55%, #171A3A 100%)",
-            boxShadow:
-              "0 10px 34px -14px rgb(var(--spirit-purple-rgb) / 0.55), " +
-              "0 0 0 1px rgb(var(--spirit-lavender-rgb) / 0.22)",
-          }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none opacity-70"
-            style={{
-              background:
-                "radial-gradient(60% 120% at 20% 50%, rgb(var(--spirit-teal-rgb) / 0.22), transparent 70%), " +
-                "radial-gradient(60% 120% at 80% 50%, rgb(var(--spirit-gold-rgb) / 0.16), transparent 70%)",
-            }}
-          />
-          <img
-            src={chakraImg}
-            alt="Seven chakra symbols"
-            className="relative z-10 w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-            style={{ maxHeight: "88px" }}
-          />
-        </div>
+
+      <div className="container-page container-wide relative z-10">
+        <ul className="chakra-list">
+          {chakras.map((chakra, idx) => (
+            <ChakraItem key={chakra.name} chakra={chakra} index={idx} />
+          ))}
+        </ul>
       </div>
+
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-secondary/25 to-transparent" />
-    </motion.div>
+    </section>
   );
 }

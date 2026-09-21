@@ -4,10 +4,10 @@ import { Smile, BookOpen, Clock, Users } from "lucide-react";
 import statsBgImg from "@assets/-f0PQzH68UTDFFD6FehVW_y-U-OUP1V5y82SudiQH4meXJ0ifUHjiizq-FpOB_1778830182869.jpeg";
 
 const stats = [
-  { icon: Smile,    value: 232, suffix: "+", label: "People Helped" },
-  { icon: BookOpen, value: 102, suffix: "+", label: "Healing Sessions" },
-  { icon: Clock,    value: 10,  suffix: "+", label: "Years of Experience" },
-  { icon: Users,    value: 15,  suffix: "+", label: "Workshops Hosted" },
+  { icon: Smile,    value: 50, suffix: "+", label: "People Helped" },
+  { icon: BookOpen, value: 100, suffix: "+", label: "Healing Sessions" },
+  { icon: Clock,    value: 4,  suffix: "+", label: "Years of Experience" },
+  { icon: Users,    value: 5,  suffix: "+", label: "Workshops Hosted" },
 ];
 
 function Counter({ target, inView }: { target: number; inView: boolean }) {
@@ -32,28 +32,28 @@ export function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden">
+    <section ref={ref} className="section-y relative overflow-hidden">
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${statsBgImg})` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/75 via-foreground/60 to-foreground/80" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8">
+      <div className="container-page relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="section-head"
         >
-          <h3 className="font-serif text-3xl md:text-4xl text-white">
+          <h3 className="font-serif text-3xl md:text-4xl text-white text-balance">
             Healing Lives With{" "}
             <span className="text-aura-turquoise italic">Care & Compassion</span>
           </h3>
-          <p className="text-white/65 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed">
-            Supporting emotional, mental, and spiritual wellness through personalized healing sessions and compassionate guidance.
+          <p className="text-white/60 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed text-pretty">
+            Emotional Wellness Support” unless Archana is professionally licensed as a mental-health counselor.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 sm:gap-8">
           {stats.map((s, idx) => {
             const Icon = s.icon;
             return (
@@ -69,10 +69,10 @@ export function Stats() {
                 <div className="w-14 h-14 rounded-full bg-white/12 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/20 shadow-[0_0_25px_rgba(100,220,255,0.15)]">
                   <Icon className="w-6 h-6 text-cyan-200" />
                 </div>
-                <div className="font-serif text-5xl text-white font-medium mb-2">
+                <div className="font-serif text-4xl sm:text-5xl text-white font-medium mb-2 tabular-nums">
                   <Counter target={s.value} inView={inView} />{s.suffix}
                 </div>
-                <p className="text-xs tracking-widest uppercase text-white/55 font-medium">{s.label}</p>
+                <p className="text-[11px] tracking-widest uppercase text-white/55 font-medium">{s.label}</p>
               </motion.div>
             );
           })}

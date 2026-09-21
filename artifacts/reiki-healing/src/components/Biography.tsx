@@ -6,10 +6,10 @@ import { Quote, ChevronDown, Sparkles, Flame } from "lucide-react";
 // The disciplines Archana's practice expanded through, in her own
 // ordering. Rotating pastel accents so the grid reads as one set.
 const disciplines = [
+  "Durga Reiki",
   "Rudraksha",
   "Dragon Energy",
   "Intuitive Oracle Cards",
-  "Crystal Healing",
   "Futhark Runes",
   "Quantum Shambhavi",
   "Angel Healing",
@@ -102,7 +102,7 @@ export function Biography() {
           <p>
             Archana did not enter the path of healing simply to learn techniques or collect
             spiritual knowledge. Her journey began inwardly. She first sought understanding and
-            healing for herself. Under the grace and guidance of her Divine Guru, meditation
+            healing for herself. Under the grace and guidance of her Divine Guru (Manish Sharma Ji), meditation
             gradually became a doorway through which she explored deeper dimensions of
             consciousness, purpose, and inner transformation.
           </p>
@@ -158,15 +158,13 @@ export function Biography() {
                 </p>
                 <p>
                   Archana believes that deep meditation can become an inner teacher. When practiced
-                  with sincerity, discipline, surrender, and the blessings of a Divine Guru,
+                  with sincerity, discipline, surrender, and the blessings of a Divine Guru (Manish Sharma Ji),
                   meditation can reveal layers of oneself that ordinary awareness rarely reaches.
                   The mind gradually becomes quieter, intuition becomes clearer, and spiritual
                   understanding begins to unfold.
                 </p>
                 <p>
-                  Yet Archana's path has never been based on meditation alone. Over time, her
-                  spiritual exploration expanded through several healing and intuitive disciplines,
-                  including:
+                  Archana’s spiritual exploration has expanded through several healing and intuitive disciplines. Each path contributes a different perspective while Durga Reiki remains at the heart of her practice.
                 </p>
               </div>
 
@@ -189,9 +187,7 @@ export function Biography() {
 
               <div className="space-y-5 text-base text-foreground/75 leading-relaxed">
                 <p>
-                  Each practice became another language through which she explored energy,
-                  consciousness, intuition, healing, and the relationship between the human and the
-                  Divine.
+                 These practices are presented as spiritual and reflective disciplines. A session does not need to include every path; the approach is considered according to the intention discussed while respecting each person’s beliefs, boundaries and comfort.
                 </p>
               </div>
 
@@ -225,7 +221,7 @@ export function Biography() {
                   strength, protection, transformation, compassion, and awakening. Her journey
                   toward becoming a Durga Reiki Mahaguru developed through personal practice,
                   spiritual discipline, experience, and above all, the grace and guidance she
-                  attributes to her Divine Guru.
+                  attributes to her Divine Guru (Manish Sharma Ji).
                 </p>
               </motion.div>
 

@@ -1,315 +1,333 @@
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { Award, BookOpen, Star, Heart, Sparkles, Users, Globe, Zap } from "lucide-react";
-import profileBg from "@assets/upRkC9WdOUahu9jCtZG5vSXP68AfrXT0-sUG0CUgzSdXVMdptihJw0cSz9HXS_1778830247395.jpeg";
+import { Eye, Flame, Flower, Flower2, Gem, Globe, Sparkles, Waves } from "lucide-react";
+import { LotusOrnament } from "@/components/decor/Ornaments";
 
-// Rotating pastel/ink pairs so the certification grid reads as a
-// harmonious set rather than eight identical teal tiles.
-const certAccents = [
-  { accent: "var(--spirit-turquoise-rgb)", ink: "var(--spirit-teal-rgb)" },
-  { accent: "var(--spirit-lavender-rgb)",  ink: "var(--spirit-purple-rgb)" },
-  { accent: "var(--spirit-gold-rgb)",      ink: "176 124 34" },
-  { accent: "var(--spirit-peach-rgb)",     ink: "196 112 92" },
-];
+/* ------------------------------------------------------------------
+   "Healing Journey" — an alternating timeline down a central rail.
+   Each milestone carries its own pastel accent (tile tint + dot), so
+   the column reads as a progression rather than eight identical cards.
+------------------------------------------------------------------- */
 
-const accomplishments = [
-  { icon: Award,    label: "Usui Reiki Maha Guru",             detail: "Level III Certified" },
-  { icon: Star,     label: "Karuna Reiki® Master",                detail: "International Certification" },
-  { icon: BookOpen, label: "Pranic Healing Practitioner",         detail: "Advanced Level" },
-  { icon: Globe,    label: "Angel Healing & Theta Healing",        detail: "Certified Practitioner" },
-  { icon: Zap,      label: "Crystal Healing & Chakra Therapy",    detail: "Specialist" },
-  { icon: Heart,    label: "Tarot & Spiritual Guidance",          detail: "Expert Reader" },
-  { icon: Users,    label: "Past Life Regression",                detail: "PLRT Certified" },
-  { icon: Sparkles, label: "Akashic Records Reading",             detail: "Advanced Practitioner" },
-];
+type Milestone = {
+  icon: typeof Flower;
+  title: string;
+  desc: string;
+  /** Pastel used for the icon tile and the dot halo. */
+  accent: string;
+  /** Deeper ink of the same hue, for the icon glyph and dot core. */
+  ink: string;
+};
 
-// `badge` is deep enough to carry white text; `glow` is the pastel
-// used for the timeline dot halo and the card's border tint.
-const timeline = [
+const milestones: Milestone[] = [
   {
-    year: "2012",
-    title: "Spiritual Awakening",
-    desc: "Began her personal healing journey after a profound spiritual experience, discovering the transformative power of Reiki energy.",
-    badge: "#0C7A70",
-    glow: "var(--spirit-turquoise-rgb)",
+    icon: Flower2,
+    title: "Archana's Beginnings",
+    desc: "Archana comes from a spiritual family, and from childhood she has been connected to spirituality through family traditions, meditation, and the blessings of her Guru.",
+    accent: "var(--spirit-turquoise-rgb)",
+    ink: "18 134 106",
   },
   {
-    year: "2013",
-    title: "Reiki Level I & II",
-    desc: "Completed Usui Reiki Levels I and II under a lineage Master, experiencing deep personal transformation and clarity.",
-    badge: "#6A4EC6",
-    glow: "var(--spirit-lavender-rgb)",
+    icon: Flower,
+    title: "Deep Spiritual Practice",
+    desc: "Through years of meditation, sadhana, self-exploration and inner work, Archana has deepened her connection with the Divine and developed a strong foundation in energy healing and spiritual wisdom.",
+    accent: "var(--spirit-lavender-rgb)",
+    ink: "106 78 198",
   },
   {
-    year: "2015",
-    title: "Reiki Master Certification",
-    desc: "Attained Reiki Master Teacher certification, enabling her to attune others and formally begin her healing practice.",
-    badge: "#C24E77",
-    glow: "var(--spirit-rose-rgb)",
+    icon: Sparkles,
+    title: "Durga Reiki Mahaguru",
+    desc: "Archana became a Durga Reiki Mahaguru, blending divine guidance with energy healing to help bring strength, protection, courage, and compassion to others.",
+    accent: "var(--spirit-rose-rgb)",
+    ink: "194 78 119",
   },
   {
-    year: "2017",
-    title: "Advanced Modalities",
-    desc: "Trained in Karuna Reiki®, Pranic Healing, Crystal Therapy, and Theta Healing — expanding her toolkit for deep-level transformation.",
-    badge: "#A87A20",
-    glow: "var(--spirit-gold-rgb)",
+    icon: Waves,
+    title: "Magnetism & Energy Healing",
+    desc: "Archana works with Magnetism and Energy Healing as a holistic wellness practice, creating balance and harmony within the body, mind, and energy field.",
+    accent: "var(--spirit-gold-rgb)",
+    ink: "168 122 32",
   },
   {
-    year: "2019",
-    title: "Divine Healing Founded",
-    desc: "Launched Divine Healing, offering one-on-one sessions, workshops, and group healing circles both in-person and online.",
-    badge: "#12866A",
-    glow: "109 210 180",
+    icon: Flame,
+    title: "Dragon Energy Healing",
+    desc: "Archana incorporates Dragon Energy Healing, working with the dragon's symbolism of strength, transformation, protection, and powerful inner energy.",
+    accent: "var(--spirit-teal-rgb)",
+    ink: "18 134 106",
   },
   {
-    year: "2021–Present",
+    icon: Gem,
+    title: "Complementary Healing Modalities",
+    desc: "Her journey also includes Angel Healing, Crystal Healing, Futhark Runes, Rudraksha, and other sacred energy traditions, which enrich her work and intuitive connection.",
+    accent: "var(--spirit-rose-rgb)",
+    ink: "194 78 119",
+  },
+  {
+    icon: Eye,
+    title: "Third Eye Awakening",
+    desc: "Through the spiritual guidance from her Divine Guru (Manish Sharma Ji), Archana is learning and practising third eye awakening, including Quantum Shambhavi, to enhance intuition, inner guidance, and clarity.",
+    accent: "var(--spirit-purple-rgb)",
+    ink: "106 78 198",
+  },
+  {
+    icon: Globe,
     title: "Global Practice",
-    desc: "Expanded to serve clients worldwide through distance Reiki and online guidance, touching hundreds of lives across India, UAE, UK, and the US.",
-    badge: "#3A3E86",
-    glow: "var(--spirit-lavender-rgb)",
+    desc: "Today, Archana serves clients worldwide through distance Reiki and online guidance, touching hundreds of lives across India and the US, and continues to expand her practice.",
+    accent: "var(--spirit-lavender-rgb)",
+    ink: "58 62 134",
   },
 ];
 
-const expertise = [
-  "Stress & Anxiety Relief",
-  "Emotional Trauma Healing",
-  "Chakra Balancing",
-  "Negative Energy Removal",
-  "Relationship Healing",
-  "Career & Abundance Blocks",
-  "Spiritual Awakening Support",
-  "Pain & Chronic Illness Support",
-  "Manifestation & Law of Attraction",
-  "Grief & Loss Support",
+const modalities = [
+  "Durga Reiki",
+  "Magnetism",
+  "Dragon Energy",
+  "Angel Healing",
+  "Crystal Healing",
+  "Futhark Runes",
+  "Rudraksha",
+  "Quantum Shambhavi",
+  "and more",
 ];
+
+const closing = ["Healing Beyond Boundaries", "Guided by the Divine", "For a Brighter Tomorrow"];
+
+/** Small gold lotus that caps the timeline. */
+function LotusMark() {
+  return (
+    <svg viewBox="0 0 200 130" className="w-10 h-auto shrink-0" aria-hidden="true">
+      {[
+        "M100 18 C80 44 80 80 100 102 C120 80 120 44 100 18 Z",
+        "M100 102 C70 92 54 62 60 36 C82 48 96 74 100 102 Z",
+        "M100 102 C130 92 146 62 140 36 C118 48 104 74 100 102 Z",
+        "M100 102 C60 106 30 84 18 60 C48 60 80 78 100 102 Z",
+        "M100 102 C140 106 170 84 182 60 C152 60 120 78 100 102 Z",
+      ].map((d, i) => (
+        <path
+          key={i}
+          d={d}
+          fill="none"
+          stroke="rgb(var(--spirit-gold-rgb) / 0.85)"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+      ))}
+    </svg>
+  );
+}
 
 export function HealerProfile() {
   return (
-    <section id="healer" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="aura-field aura-field--gold" />
-      <div className="veil-gold absolute inset-0 pointer-events-none" />
-      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-secondary/8 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-primary/6 rounded-full blur-[160px] pointer-events-none" />
+    <section id="healer" className="section-y relative overflow-hidden">
+      {/* ---- Ambient field: lavender left, cream centre, peach right ---- */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(38% 46% at 8% 42%, rgb(var(--spirit-gold-rgb) / 0.22), transparent 70%),
+            radial-gradient(45% 55% at 92% 30%, rgb(var(--spirit-peach-rgb) / 0.22), transparent 72%),
+            radial-gradient(50% 60% at 50% 55%, rgb(var(--spirit-cream-rgb) / 0.75), transparent 78%),
+            linear-gradient(105deg,
+              rgb(var(--spirit-lavender-rgb) / 0.32) 0%,
+              rgb(var(--spirit-cream-rgb) / 0.70) 45%,
+              rgb(var(--spirit-peach-rgb) / 0.26) 100%)
+          `,
+        }}
+      />
+      {/* Big line-art lotus behind the left column, as in the reference */}
+      <LotusOrnament
+        size="clamp(16rem, 30vw, 26rem)"
+        motion="float"
+        opacity={0.5}
+        className="-left-20 top-1/4 hidden sm:block"
+      />
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="container-page relative z-10">
+        {/* ---- Heading ------------------------------------------------ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="relative text-center"
         >
-          <span className="inline-flex items-center gap-1.5 text-xs font-medium tracking-[0.3em] uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-4">
-            <Sparkles className="w-3 h-3" /> Meet Your Healer
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">
-            Archana Rai — <span className="text-aura-teal italic">Reiki Maha Guru</span>
+          <h2 className="font-serif font-medium text-[2.25rem] sm:text-5xl tracking-tight text-foreground">
+            Healing{" "}
+            <span className="italic" style={{ color: "var(--spirit-gold)" }}>
+              Journey
+            </span>
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto" />
+
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <span
+              aria-hidden="true"
+              className="h-px w-10 sm:w-16"
+              style={{ background: "rgb(var(--spirit-gold-rgb) / 0.7)" }}
+            />
+            <span
+              className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase"
+              style={{ color: "var(--spirit-purple)" }}
+            >
+              A path of divine guidance
+            </span>
+            <span
+              aria-hidden="true"
+              className="h-px w-10 sm:w-16"
+              style={{ background: "rgb(var(--spirit-gold-rgb) / 0.7)" }}
+            />
+          </div>
+
+          {/* Script accent, desktop only — it has nowhere to sit on a phone */}
+          <p
+            aria-hidden="true"
+            className="hidden lg:block absolute right-0 -top-2 text-right leading-[1.15] text-3xl xl:text-4xl -rotate-6"
+            style={{ fontFamily: "'Parisienne', cursive", color: "rgb(var(--spirit-gold-rgb) / 0.9)" }}
+          >
+            Heal
+            <br />
+            <span className="inline-block translate-x-5">Align</span>
+            <br />
+            <span className="inline-block translate-x-10">Awaken</span>
+          </p>
         </motion.div>
 
-        {/* Profile hero card */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
-            className="img-aura img-aura--gold lg:col-span-2 relative"
-          >
-            <div className="img-hover-warm relative z-10 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
-              <img
-                src={profileBg}
-                alt="Archana Rai — Divine Healer"
-                className="w-full object-cover"
-                style={{ maxHeight: "520px", objectPosition: "top" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 inset-x-0 p-6">
-                <p className="font-serif text-2xl text-white mb-1">Archana Rai</p>
-                <p className="text-xs tracking-widest uppercase text-white/60">Reiki Maha Guru · Energy Healer · Spiritual Guide</p>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {["Usui Reiki", "Karuna Reiki®", "Pranic Healing", "Theta Healing"].map((tag) => (
-                    <span key={tag} className="text-[10px] bg-white/15 backdrop-blur-sm text-white/80 px-2.5 py-1 rounded-full border border-white/20">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* ---- Timeline ----------------------------------------------- */}
+        <div className="relative mt-14 md:mt-16">
+          {/* Central rail — left-aligned on phones, centred from md up */}
+          <div
+            aria-hidden="true"
+            className="absolute top-2 bottom-2 w-px left-[0.625rem] md:left-1/2"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent, " +
+                "rgb(var(--spirit-teal-rgb) / 0.5) 6%, " +
+                "rgb(var(--spirit-purple-rgb) / 0.45) 35%, " +
+                "rgb(var(--spirit-rose-rgb) / 0.45) 65%, " +
+                "rgb(var(--spirit-gold-rgb) / 0.45) 88%, transparent)",
+            }}
+          />
 
-            {/* Quick stats */}
-            <div className="relative z-10 grid grid-cols-3 gap-3 mt-4">
-              {[
-                { val: "10+", label: "Years", accent: "var(--spirit-turquoise-rgb)", ink: "var(--spirit-teal-rgb)" },
-                { val: "500+", label: "Clients", accent: "var(--spirit-lavender-rgb)", ink: "var(--spirit-purple-rgb)" },
-                { val: "8+", label: "Modalities", accent: "var(--spirit-gold-rgb)", ink: "176 124 34" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  style={{ "--card-accent-rgb": s.accent } as CSSProperties}
-                  className="lift-card bg-card/70 border rounded-xl p-3 text-center backdrop-blur-sm"
+          <ol className="space-y-5 md:space-y-0">
+            {milestones.map((m, idx) => {
+              const Icon = m.icon;
+              const onLeft = idx % 2 === 0;
+              return (
+                <motion.li
+                  key={m.title}
+                  initial={{ opacity: 0, x: onLeft ? -28 : 28 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 0.8, 0.3, 1] }}
+                  className="grid grid-cols-[1.25rem_1fr] md:grid-cols-[1fr_1.25rem_1fr] items-start gap-x-4 md:gap-x-0 md:mb-6 md:last:mb-0"
+                  style={{ "--accent": m.accent, "--ink": m.ink } as CSSProperties}
                 >
-                  <p
-                    className="font-serif text-xl font-medium"
-                    style={{ color: `rgb(${s.ink})` }}
-                  >
-                    {s.val}
-                  </p>
-                  <p className="text-[10px] uppercase tracking-widest text-foreground/50 mt-0.5">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                  {/* Dot */}
+                  <span className="col-start-1 md:col-start-2 flex justify-center mt-7">
+                    <span
+                      className="h-3 w-3 rounded-full"
+                      style={{
+                        background: "rgb(var(--ink))",
+                        boxShadow: "0 0 0 4px rgb(var(--accent) / 0.35)",
+                      }}
+                    />
+                  </span>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            className="lg:col-span-3 flex flex-col justify-start"
-          >
-            <h3 className="font-serif text-2xl text-foreground mb-4">A Life Dedicated to Healing</h3>
-            <p className="text-foreground/65 font-light leading-relaxed mb-4 text-base">
-              Archana Rai is a Usui Reiki Maha Guru, Karuna Reiki® Master, and multi-certified energy healing practitioner with over a decade of devoted practice. Her journey began with her own transformative healing experience — and from that awakening, a calling was born.
-            </p>
-            <p className="text-foreground/65 font-light leading-relaxed mb-4 text-base">
-              Based in Mumbai, India, Archana works with clients across the globe — offering in-person sessions, distance Reiki, spiritual readings, chakra clearing, and more. Her approach is gentle yet profound: meeting each person exactly where they are, and holding space for whatever needs to surface.
-            </p>
-            <p className="text-foreground/65 font-light leading-relaxed mb-8 text-base italic border-l-2 border-primary/40 pl-4">
-              "Healing is not something I do to you — it is something we create together. My role is simply to hold the light steady, so you can find your way back to yourself."
-              <span className="block text-xs not-italic text-foreground/40 mt-2 tracking-widest uppercase">— Archana Rai</span>
-            </p>
-
-            <h4 className="font-serif text-lg text-foreground mb-4">Certifications & Specialisations</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {accomplishments.map((a, idx) => {
-                const Icon = a.icon;
-                const tone = certAccents[idx % certAccents.length];
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.15 + idx * 0.06 }}
-                    style={
-                      {
-                        "--card-accent-rgb": tone.accent,
-                        "--card-ink-rgb": tone.ink,
-                      } as CSSProperties
-                    }
-                    className="accent-card group flex items-start gap-3 bg-card/60 border rounded-xl p-3"
+                  {/* Card. Class strings are written out in full rather than
+                      interpolated — Tailwind scans source text, so a built-up
+                      `md:col-start-${n}` would never be generated. */}
+                  <article
+                    className={`col-start-2 w-full md:max-w-[26rem] rounded-2xl border border-white/70 backdrop-blur-sm p-5 sm:p-6 text-left shadow-[0_10px_34px_rgb(var(--spirit-indigo-rgb)/0.07)] ${
+                      onLeft
+                        ? "md:col-start-1 md:justify-self-end md:mr-9"
+                        : "md:col-start-3 md:justify-self-start md:ml-9"
+                    }`}
+                    style={{
+                      background:
+                        "linear-gradient(140deg, rgb(var(--accent) / 0.13), rgb(var(--spirit-cream-rgb) / 0.88) 55%)",
+                    }}
                   >
-                    <div className="accent-card__icon w-8 h-8 rounded-lg flex items-center justify-center shrink-0">
-                      <Icon className="w-4 h-4" />
+                    <div className="flex items-start gap-3.5">
+                      <span
+                        aria-hidden="true"
+                        className="grid h-10 w-10 shrink-0 place-items-center rounded-xl"
+                        style={{ background: "rgb(var(--accent) / 0.22)" }}
+                      >
+                        <Icon className="h-5 w-5" strokeWidth={1.5} style={{ color: "rgb(var(--ink))" }} />
+                      </span>
+                      <div>
+                        <h3 className="font-serif text-xl sm:text-[1.35rem] leading-snug text-foreground">
+                          {m.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-[1.75] text-foreground/65 font-light text-pretty">
+                          {m.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm text-foreground/85 font-medium leading-snug">{a.label}</p>
-                      <p className="text-[10px] text-foreground/45 uppercase tracking-wider mt-0.5">{a.detail}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
+                  </article>
+                </motion.li>
+              );
+            })}
+          </ol>
         </div>
 
-        {/* Experience Timeline */}
+        {/* ---- Lotus rule --------------------------------------------- */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-16"
+          transition={{ duration: 0.8 }}
+          className="mt-14 flex items-center justify-center gap-5"
         >
-          <h3 className="font-serif text-2xl text-foreground text-center mb-10">
-            Healing <span className="text-aura-teal italic">Journey</span>
-          </h3>
-          <div className="relative">
-            <div
-              className="absolute left-1/2 top-0 bottom-0 w-px hidden md:block"
-              style={{
-                background:
-                  "linear-gradient(to bottom, rgb(var(--spirit-teal-rgb) / 0.55), " +
-                  "rgb(var(--spirit-purple-rgb) / 0.45), " +
-                  "rgb(var(--spirit-rose-rgb) / 0.45), " +
-                  "rgb(var(--spirit-gold-rgb) / 0.45), transparent)",
-              }}
-            />
-            <div className="space-y-6 md:space-y-0">
-              {timeline.map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.08 }}
-                  className={`md:grid md:grid-cols-2 md:gap-8 items-center mb-6 ${idx % 2 === 0 ? "" : "md:[direction:rtl]"}`}
-                >
-                  <div className={`md:[direction:ltr] ${idx % 2 === 0 ? "md:text-right md:pr-8" : "md:pl-8"}`}>
-                    <div
-                      style={{ "--card-accent-rgb": item.glow } as CSSProperties}
-                      className={`lift-card inline-block bg-card/70 border rounded-2xl p-5 text-left shadow-sm max-w-sm ${idx % 2 !== 0 ? "md:ml-0" : "md:ml-auto"}`}
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <span
-                          className="text-xs font-bold tracking-widest uppercase text-white px-2.5 py-1 rounded-lg"
-                          style={{
-                            backgroundColor: item.badge,
-                            boxShadow: `0 3px 12px -3px rgb(${item.glow} / 0.85)`,
-                          }}
-                        >
-                          {item.year}
-                        </span>
-                      </div>
-                      <p className="font-serif text-base text-foreground mb-1.5">{item.title}</p>
-                      <p className="text-xs text-foreground/60 font-light leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:flex justify-center items-center relative">
-                    <div
-                      style={
-                        {
-                          "--card-accent-rgb": item.glow,
-                          "--dot-core": item.badge,
-                        } as CSSProperties
-                      }
-                      className="timeline-dot w-3 h-3 rounded-full absolute left-1/2 -translate-x-1/2"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          <span
+            aria-hidden="true"
+            className="h-px w-16 sm:w-40"
+            style={{ background: "linear-gradient(to right, transparent, rgb(var(--spirit-gold-rgb) / 0.75))" }}
+          />
+          <LotusMark />
+          <span
+            aria-hidden="true"
+            className="h-px w-16 sm:w-40"
+            style={{ background: "linear-gradient(to left, transparent, rgb(var(--spirit-gold-rgb) / 0.75))" }}
+          />
         </motion.div>
 
-        {/* Areas of expertise */}
+        {/* ---- Modalities + closing line ------------------------------ */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center"
+          className="mt-8 text-center"
         >
-          <h3 className="font-serif text-2xl text-foreground mb-8">
-            Areas of <span className="text-aura-teal italic">Expertise</span>
-          </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {expertise.map((e, idx) => (
-              <motion.span
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: idx * 0.05 }}
-                className="px-4 py-2 rounded-full bg-card/60 border border-primary/15 text-sm text-foreground/75 font-light hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-300 cursor-default"
-              >
-                {e}
-              </motion.span>
+          <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-foreground/70">
+            {modalities.map((name, i) => (
+              <li key={name} className="flex items-center gap-3">
+                {i > 0 && (
+                  <span
+                    aria-hidden="true"
+                    className="h-1 w-1 rounded-full"
+                    style={{ background: "rgb(var(--spirit-gold-rgb))" }}
+                  />
+                )}
+                <span className={name === "and more" ? "italic text-foreground/50" : ""}>{name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+
+          <p
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-serif italic text-base sm:text-lg"
+            style={{ color: "rgb(var(--spirit-gold-rgb))" }}
+          >
+            {closing.map((line, i) => (
+              <span key={line} className="flex items-center gap-3">
+                {i > 0 && (
+                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-current opacity-70" />
+                )}
+                {line}
+              </span>
+            ))}
+          </p>
         </motion.div>
       </div>
     </section>
