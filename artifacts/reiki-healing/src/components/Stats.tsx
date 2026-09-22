@@ -48,9 +48,9 @@ export function Stats() {
             Healing Lives With{" "}
             <span className="text-aura-turquoise italic">Care & Compassion</span>
           </h3>
-          <p className="text-white/60 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed text-pretty">
+          {/* <p className="text-white/60 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed text-pretty">
             Unless Archana is professionally licensed as a mental-health counselor.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 sm:gap-8">
