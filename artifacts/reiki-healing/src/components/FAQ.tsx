@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "What can I seek support for?",
-    a: "People may seek spiritual-wellness support for everyday stress, emotional heaviness, difficult experiences, discomfort or pain, low energy, restlessness, lack of clarity or a desire for spiritual growth. These sessions do not treat medical or psychological conditions.",
+    a: "People may seek these sessions for relaxation, personal reflection, spiritual connection, mindfulness and a greater sense of general well-being. Sessions are not intended to diagnose, treat, cure or prevent any medical or psychological condition.",
   },
   {
     q: "Do I need to share a diagnosis or private medical details?",

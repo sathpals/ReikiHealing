@@ -77,6 +77,11 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname),
+  // Only crawl the real entry for dependency pre-bundling; otherwise Vite also
+  // scans a previous build's HTML in dist/public and aborts the scan.
+  optimizeDeps: {
+    entries: ["index.html"],
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,

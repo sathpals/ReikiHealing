@@ -7,27 +7,27 @@ const testimonials = [
   {
     name: "Geet.",
     // role: "Marketing Manager",
-    text: "Having severe backpain from almost more than year. With Archana's healing it got resolved. I was amazed to see the results. I would highly recommend her to anyone who is looking for healing and spiritual guidance.",
+    text: "I connected with Archana while experiencing long-standing back discomfort. I found her sessions calming and supportive, and I truly appreciated her compassionate spiritual guidance.",
   },
   {
     name: "Surendra.",
     // role: "Yoga Teacher",
-    text: "With Archana Didi's Healing it helped to get the great sleep in night. Money blockages were removed. Recieved Divine Blessing.",
+    text: "Archana Didi’s sessions helped me feel calmer and more relaxed at night. During a financially stressful period, her spiritual guidance gave me comfort, encouragement and a sense of divine support.",
   },
   {
     name: "Pooja.",
     // role: "Small Business Owner",
-    text: "Diagnosed with lump-cyst below to chin area. Doctor suggsted surgery, with Archan's healing it vanished in less 2 weeks. thank you Archana Di for helping me.",
+    text: "While receiving medical guidance for a lump below my chin, I also participated in Archana’s spiritual wellness sessions. Her caring approach brought me comfort and emotional support during that time.",
   },
   {
     name: "Gajanan",
     // role: "Software Engineer",
-    text: "I was struggling to quit smoking. With Archana’s healing, I have finally quit this habit. Thank you, Archana, for your healing and support!…",
+    text: "While working toward quitting smoking, I received spiritual support and encouragement from Archana. Her sessions helped me feel supported and motivated as I made this positive lifestyle change.",
   },
   {
     name: "Pushpa",
     // role: "Nurse",
-    text: "I was struggling with sleep problems (migraine)  and had a cyst in my tummy area. Since receiving Archana’s healing, the cyst has disappeared, and I have been sleeping better at night. Thank you, Archana, for your care and support!",
+    text: "During a period when I was experiencing sleep difficulties and other health concerns, I participated in Archana’s spiritual wellness sessions alongside appropriate medical care. I felt calmer, more supported and noticed better sleep in my personal experience.",
   },
 ];
 
@@ -167,6 +167,7 @@ export function Testimonials() {
             <ChevronRight className="h-4 w-4" strokeWidth={1.75} />
           </button>
         </div>
+        <p className="items-center justify-center section-title font-serif text-xl sm:text-[22px] ">Individual experiences vary. Aura Healz offers spiritual wellness support <br/> and is not a substitute for professional medical or mental-health care.</p>
       </div>
     </section>
   );

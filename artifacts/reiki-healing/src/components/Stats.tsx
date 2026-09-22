@@ -49,7 +49,7 @@ export function Stats() {
             <span className="text-aura-turquoise italic">Care & Compassion</span>
           </h3>
           <p className="text-white/60 font-light mt-4 max-w-xl mx-auto text-sm leading-relaxed text-pretty">
-            Emotional Wellness Support” unless Archana is professionally licensed as a mental-health counselor.
+            Unless Archana is professionally licensed as a mental-health counselor.
           </p>
         </motion.div>
 
